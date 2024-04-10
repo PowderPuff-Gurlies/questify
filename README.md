@@ -13,7 +13,9 @@ Time spent: **3** hours spent in total
 
 ## Summary
 
-This document provides an overview, project spec, and wireframes for our team's capstone project: An app to where you can schedule your tasks, complete challenges, and earn rewards with your virtual avatar. Stay organized, motivated, and on top of your game. Your ultimate productivity companion!
+This document provides an overview, project spec, and wireframes for our team's capstone project: 
+
+An app to where you can schedule your tasks, complete challenges, and earn rewards with your virtual avatar. Stay organized, motivated, and on top of your game. Your ultimate productivity companion!
 
 If we had to describe this milestone in three (3) emojis, they would be: **♥️🧙‍♀️🧜‍♀️🧑‍🚀🎲**
 
