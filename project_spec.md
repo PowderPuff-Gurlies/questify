@@ -1,4 +1,4 @@
-# **PENDING APP NAME**
+# **PENDING APP NAME (TBD)**
 
 ## Table of Contents
 
@@ -11,18 +11,22 @@
 
 ### Description 
 
-**Mobile app that ...**
+**Mobile app that gamifies task management by allowing users to schedule tasks, earn points, and level up their virtual avatars.**
 
 ### App Evaluation
 
 <!-- Evaluation of your app across the following attributes -->
 
-- **Category:** Productivity, Communication
-- **Mobile:** Yes
-- **Story:** 
-- **Market:** Young adults 
-- **Habit:** 
-- **Scope:** People with Android Phones
+- **Category:** Productivity, Gamification
+- **Mobile:** Users interact with their avatars, earning rewards and customizing features. Push notifications keep users engaged and on track.
+- **Story:** Tasks become adventures as users strive to level up their avatars and unlock rewards, creating a compelling narrative of progress.
+- **Market:** The app caters to a broad user base interested in enhancing productivity through gamified elements, primarily young adults. 
+- **Habit:** Users integrate the app into their daily routine, constantly striving to complete tasks and earn rewards. The app encourages frequent engagement as users progress through levels and unlock new features.
+- **Scope:** 
+    - **V1**: Users schedule tasks and earn points with their virtual avatars. 
+    - **V2**: Introduces advanced gamification elements, such as challenges and leaderboards. 
+    - **V3**: (Optional) Enhances social features, allowing users to compete and collaborate with friends.
+    - **V4**: (Optional) Expands platform compatibility and introduces premium customization options.
 
 ## Product Spec
 
@@ -30,40 +34,39 @@
 
 Required Features:
 
-- **using API**
-- **<= 3 Screens**
+- **Using Google Calendar API**
+- **At least 3 Screens**
 - **Themes**
-- **connect to internet**
-- **button and text interactions**
-- **recyclerView**
+- **Connect to Internet**
+- **Button and text interactions**
+- **RecyclerView**
 
 Stretch Features:
 
-- **fill in here**
-- ...
+- **Leaderboards**
+- **Achievements**
+- **Firebase for Storing User Info**
 
 ### 2. Chosen API(s)
 
-- **list first API endpoint here**
-  - **list associated required feature here**
-  - ...
-- ...
+- **Task Management API**
+  - **Using Google Calendar API**
+  - **Connect to internet**
 
 ### 3. User Interaction
 
 Required Feature
 
-- **button to add ...**
-  - => **list result of user action here**
-  - ...
-- **list second user action here**
-  - => **list result of user action here**
-  - ...
+- **Button to add tasks**
+  - => **Task is added to the schedule**
+- **Button to complete tasks**
+  - => **User earns points and levels up avatar**
+- **RecyclerView to see past tasks and/or achievements**
 
 ## Wireframes
 
 <!-- Add picture of your hand sketched wireframes in this section -->
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="wireframe.jpg" width=600>
 
 ## Build Notes
 

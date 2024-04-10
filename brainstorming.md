@@ -67,19 +67,19 @@
 
     - **Category**: Productivity
 
-    - **Mobile**: Mobile functionality is pivotal for on-the-go task scheduling. Users interact with their avatars, earning rewards and customizing features. Push notifications keep users engaged and on track.
+    - **Mobile**: Users interact with their avatars, earning rewards and customizing features. Push notifications keep users engaged and on track.
 
-    - **Story**: Engages users in a personalized journey of productivity and achievement. Tasks become adventures as users strive to level up their avatars and unlock rewards, creating a compelling narrative of progress.
+    - **Story**: Tasks become adventures as users strive to level up their avatars and unlock rewards, creating a compelling narrative of progress.
 
-    - **Market**: Appeals to individuals seeking a unique approach to task management. The app caters to a broad user base interested in enhancing productivity through gamified elements, with potential for monetization through premium features.
+    - **Market**: The app caters to a broad user base interested in enhancing productivity through gamified elements, with potential for monetization through premium features.
 
     - **Habit**: Users integrate the app into their daily routine, constantly striving to complete tasks and earn rewards. The app encourages frequent engagement as users progress through levels and unlock new features.
 
     - **Scope**: 
         - **V1**: Users schedule tasks and earn points with their virtual avatars. 
         - **V2**: Introduces advanced gamification elements, such as challenges and leaderboards. 
-        - **V3**: Enhances social features, allowing users to compete and collaborate with friends.
-        - **V4**: Expands platform compatibility and introduces premium customization options.
+        - **V3**: (Optional) Enhances social features, allowing users to compete and collaborate with friends.
+        - **V4**: (Optional) Expands platform compatibility and introduces premium customization options.
 
 - **Food Waste Helper**
   
