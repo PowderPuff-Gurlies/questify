@@ -9,7 +9,7 @@ Submitted by:
 - Anh Nguyen
 - Dung (Zoom) Nguyen
 
-Time spent: **300** hours spent in total
+Time spent: **300,000** hours spent in total
 
 ## Summary
 
