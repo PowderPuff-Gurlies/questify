@@ -48,3 +48,4 @@ Here's a place for any other notes on this milestone!
 ## References
 - https://itch.io/game-assets/tag-asset-pack
 - https://developers.google.com/calendar/api/guides/overview
+- https://developers.notion.com/docs/getting-started
