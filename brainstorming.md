@@ -61,7 +61,7 @@
         - take notes (like Notion)
         
 ## Evalute the Ideas
-   1. Scheduling Game App
+- Scheduling Game App
 
     - **Description**: The Scheduling Game App revolutionizes task management by blending scheduling with gamification. Users, guided by their virtual avatars, earn points for completing tasks, transforming mundane activities into exciting challenges.
 
