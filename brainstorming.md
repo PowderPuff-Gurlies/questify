@@ -75,7 +75,52 @@
 
     - **Habit**: Users integrate the app into their daily routine, constantly striving to complete tasks and earn rewards. The app encourages frequent engagement as users progress through levels and unlock new features.
 
-    - **Scope**: V1: Users schedule tasks and earn points with their virtual avatars. V2: Introduces advanced gamification elements, such as challenges and leaderboards. V3: Enhances social features, allowing users to compete and collaborate with friends.V4: Expands platform compatibility and introduces premium customization options.
+    - **Scope**: 
+        -**V1**: Users schedule tasks and earn points with their virtual avatars. 
+        -**V2**: Introduces advanced gamification elements, such as challenges and leaderboards. 
+        - **V3**: Enhances social features, allowing users to compete and collaborate with friends.
+        - **V4**: Expands platform compatibility and introduces premium customization options.
+
+- **Food Waste Helper**
+  
+    - **Description**: The Food Waste Helper aims to combat food waste by providing users with personalized suggestions on how to deal with their food waste effectively. Users input their waste, and the app returns actionable recommendations. Additionally, it includes a tracker to monitor waste reduction progress, utilizing an API of food waste suggestions.
+  
+    - **Category**: Sustainability
+  
+    - **Mobile**: Mobile functionality is essential for real-time tracking and logging of food waste. Users can conveniently access the app while managing their waste in the kitchen or grocery shopping. The app also utilizes the camera feature for sharing images with parents or others to raise awareness.
+  
+    - **Story**: The Food Waste Helper fosters a collaborative effort between users and the environment. It empowers individuals to make conscious decisions about their food waste, providing them with practical solutions while contributing to a sustainable future.
+  
+    - **Market**: The app targets environmentally conscious individuals, families, and businesses interested in reducing their carbon footprint. With district-wide licensing and customizable features, it has the potential to appeal to a broad user base and generate revenue.
+  
+    - **Habit**: Users integrate the app into their daily routine, utilizing it to track and manage their food waste regularly. By providing incentives and tracking progress, the app encourages habitual usage and reinforces positive behavior changes.
+  
+    - **Scope**: 
+        - **V1**: Users input food waste and receive suggestions.
+        - **V2**: Introduces advanced tracking features and personalized recommendations.
+        - **V3**: Enhances social sharing capabilities and community engagement.
+        - **V4**: Expands the app's reach through partnerships and additional features such as educational resources and gamification elements.
+
+- **Memory Lane Journal**
+  
+    - **Description**: The Memory Lane Journal helps users capture and cherish memories by allowing them to record audio snippets, take pictures, and tag them to specific locations or folders. Users can create a personalized archive of experiences, making it easy to revisit and share their favorite moments. Additionally, the app includes features such as a memory saver, Google Maps integration to display memories pinned to locations, and references from Snapchat's memory flashback feature. The app leverages Open API to accept audio recordings, further enhancing the user experience.
+  
+    - **Category**: Lifestyle
+  
+    - **Mobile**: Mobile functionality is essential for capturing memories on the go. Users can record audio snippets and take pictures directly from their smartphones, associating them with specific locations or folders to create a rich and immersive journaling experience.
+  
+    - **Story**: The Memory Lane Journal fosters a deep emotional connection with memories, enabling users to relive significant moments tied to specific places. It serves as a digital keepsake, preserving cherished memories and stories for years to come.
+  
+    - **Market**: The app appeals to individuals who value nostalgia, storytelling, and preserving memories. It caters to a diverse user base, including travelers, families, and individuals looking to document significant life events or milestones.
+  
+    - **Habit**: Users integrate the app into their daily lives, using it to capture memorable moments and reflect on past experiences. By providing a convenient platform for recording and organizing memories, the app encourages habitual usage and fosters a sense of nostalgia.
+  
+    - **Scope**: 
+        - **V1**: Users can record audio snippets, take pictures, and tag them to specific locations or folders.
+        - **V2**: Introduces additional features such as a memory saver, Google Maps integration, and Snapchat's memory flashback references.
+        - **V3**: Enhances social sharing capabilities, allowing users to share their memories with friends and family.
+        - **V4**: Expands the app's functionality with advanced features such as voice recognition and storytelling prompts to further enhance the user experience.
+
 
 
 ## Make the final decision
