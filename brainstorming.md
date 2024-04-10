@@ -1,37 +1,37 @@
 # Step 1 - Generate New Ideas
 <!-- Each group member should record at least 3 new app ideas including a brief description -->
 - Lydia:
-    (1) - Greenhouse Simulator (But Actually Your Plants): A gamified way of taking care of your plants. There will be pixelized art,  animations, a customizable avatar, APIs for weather tracking, and plant information, and other cool features!🪴
+    - Greenhouse Simulator (But Actually Your Plants): A gamified way of taking care of your plants. There will be pixelized art,  animations, a customizable avatar, APIs for weather tracking, and plant information, and other cool features!🪴
     
     - Educational app for learning cool engineering concepts (e.g. hardware, software, etc.). Primarily start with Mechanical/Electrical Engineering stuff like Arduinos, circuits, and applicable physics/probability (maybe). Future features can be collaberating with engineering kit companies like KiwiCo and cool engineering YouTubers 🛠️
     
-    (2) - A voter app that show personalized and up-to-date voting related information (e.g. local voting locations) 📬
+    - A voter app that show personalized and up-to-date voting related information (e.g. local voting locations) 📬
 
 - Josie:
     - Workout Tracker: tailors personalized exercise plans, logs workouts (weights used, sets, reps, and rest intervals), tracks progress (weight of person, weights used), goal setting, social features (acheivements, routines, tips, challenges)
     
     - Language Learning Assistant: interactive lessons, speech recognition, flashcards and quizzes, language exchange (users can connect with native speakers of their target language), progress tracking, offline access     
     
-    (3) - Memory Lane Journal: helps users capture and cherish  memories by allowing them to record audio snippets tied to specific locations
+    - Memory Lane Journal: helps users capture and cherish  memories by allowing them to record audio snippets tied to specific locations
 
 - Jennifer:
     - Tinder for pet adoption: using local shelter data (pet finder api?) pair potential owners with pets based on data the humans input. 
     
-    (3) - Food waste helper: help people figure out what to do with their food waste to reduce the amount that ends up in landfills. people enter the waste and the app returns suggestions for how to deal with it + tracker to see how much they have reduced. Api of food waste suggestions. 
+    - Food waste helper: help people figure out what to do with their food waste to reduce the amount that ends up in landfills. people enter the waste and the app returns suggestions for how to deal with it + tracker to see how much they have reduced. Api of food waste suggestions. 
     
     - Book suggestions + community: Connect book lovers with other book lovers (backend, firebase?) and recommend books to members based on their profiles. 
 
 - Zoomie: 
     - finance trading app: provides daily advice on investing, and gives information about recent economic news. 
     
-    (2) - scheduling game app: Virtual avatar, can get points for completing tasks.
+    - scheduling game app: Virtual avatar, can get points for completing tasks.
     
     - aesthetic inspo app: Has different pages for varying aesthetics. People can save clothing that fits that style and share.
 
 - Anh:
     - Carpool app: connecting people that need a ride to people that have cars
     
-    (2) - Song Category App: Get the genre of the songs (or artists) then seperate them into different playlists
+    - Song Category App: Get the genre of the songs (or artists) then seperate them into different playlists
     
     - Movie suggestion app: 
 
