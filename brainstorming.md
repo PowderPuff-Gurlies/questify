@@ -22,11 +22,11 @@
     - Book suggestions + community: Connect book lovers with other book lovers (backend, firebase?) and recommend books to members based on their profiles. 
 
 - Zoomie: 
-    - finance trading app: provides daily advice on investing, and gives information about recent economic news. 
+    - Finance trading app: provides daily advice on investing, and gives information about recent economic news. 
     
-    - scheduling game app: Virtual avatar, can get points for completing tasks.
+    - Scheduling game app: Virtual avatar, can get points for completing tasks.
     
-    - aesthetic inspo app: Has different pages for varying aesthetics. People can save clothing that fits that style and share.
+    - Aesthetic inspo app: Has different pages for varying aesthetics. People can save clothing that fits that style and share.
 
 - Anh:
     - Carpool app: connecting people that need a ride to people that have cars
