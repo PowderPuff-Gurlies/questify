@@ -15,7 +15,7 @@ Time spent: **300,000** hours spent in total
 
 This document provides an overview, project spec, and wireframes for our team's capstone project: An app that **short description of your app**
 
-If we had to describe this milestone in three (3) emojis, they would be: **emojis here**
+If we had to describe this milestone in three (3) emojis, they would be: **♥️🧙‍♀️🧜‍♀️🧑‍🚀**
 
 ## Milestone Requirements
 
