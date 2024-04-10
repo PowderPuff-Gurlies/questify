@@ -76,8 +76,8 @@
     - **Habit**: Users integrate the app into their daily routine, constantly striving to complete tasks and earn rewards. The app encourages frequent engagement as users progress through levels and unlock new features.
 
     - **Scope**: 
-        -**V1**: Users schedule tasks and earn points with their virtual avatars. 
-        -**V2**: Introduces advanced gamification elements, such as challenges and leaderboards. 
+        - **V1**: Users schedule tasks and earn points with their virtual avatars. 
+        - **V2**: Introduces advanced gamification elements, such as challenges and leaderboards. 
         - **V3**: Enhances social features, allowing users to compete and collaborate with friends.
         - **V4**: Expands platform compatibility and introduces premium customization options.
 
