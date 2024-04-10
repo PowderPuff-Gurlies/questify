@@ -61,24 +61,23 @@
         - take notes (like Notion)
         
 ## Evalute the Ideas
-   1. Scheduling Game App
+    - Scheduling Game App
+        - **Description: The Scheduling Game App revolutionizes task management by blending scheduling with gamification. Users, guided by their virtual avatars, earn points for completing tasks, transforming mundane activities into exciting challenges.
 
-    - **Description: The Scheduling Game App revolutionizes task management by blending scheduling with gamification. Users, guided by their virtual avatars, earn points for completing tasks, transforming mundane activities into exciting challenges.
+        - **Category: Productivity
 
-    - **Category: Productivity
+        - **Mobile: Mobile functionality is pivotal for on-the-go task scheduling. Users interact with their avatars, earning rewards and customizing features. Push notifications keep users engaged and on track.
 
-    - **Mobile: Mobile functionality is pivotal for on-the-go task scheduling. Users interact with their avatars, earning rewards and customizing features. Push notifications keep users engaged and on track.
+        - **Story: Engages users in a personalized journey of productivity and achievement. Tasks become adventures as users strive to level up their avatars and unlock rewards, creating a compelling narrative of progress.
 
-    - **Story: Engages users in a personalized journey of productivity and achievement. Tasks become adventures as users strive to level up their avatars and unlock rewards, creating a compelling narrative of progress.
+        - **Market: Appeals to individuals seeking a unique approach to task management. The app caters to a broad user base interested in enhancing productivity through gamified elements, with potential for monetization through premium features.
 
-    - **Market: Appeals to individuals seeking a unique approach to task management. The app caters to a broad user base interested in enhancing productivity through gamified elements, with potential for monetization through premium features.
+        - **Habit: Users integrate the app into their daily routine, constantly striving to complete tasks and earn rewards. The app encourages frequent engagement as users progress through levels and unlock new features.
 
-    - **Habit: Users integrate the app into their daily routine, constantly striving to complete tasks and earn rewards. The app encourages frequent engagement as users progress through levels and unlock new features.
-
-    - **Scope: V1: Users schedule tasks and earn points with their virtual avatars. V2: Introduces advanced gamification elements, such as challenges and leaderboards. V3: Enhances social features, allowing users to compete and collaborate with friends.V4: Expands platform compatibility and introduces premium customization options.
+        - **Scope: V1: Users schedule tasks and earn points with their virtual avatars. V2: Introduces advanced gamification elements, such as challenges and leaderboards. V3: Enhances social features, allowing users to compete and collaborate with friends.V4: Expands platform compatibility and introduces premium customization options.
 
 
 ## Make the final decision
 
-
+Scheduling Game App (Offical App Name TDB)
 
