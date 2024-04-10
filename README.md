@@ -1,6 +1,6 @@
 <!-- (This is a comment) INSTRUCTIONS: Go through this page and fill out any **bolded** entries with their correct values.-->
 
-# AND101 Milestone 1 - **PowderPuffGur**
+# AND101 Milestone 1 - **PowderPuffGurlies**
 
 Submitted by:
 - Lydia Chen
@@ -11,11 +11,15 @@ Submitted by:
 
 Time spent: **3** hours spent in total
 
+App Name: TBD
+
 ## Summary
 
-This document provides an overview, project spec, and wireframes for our team's capstone project: An app to where you can schedule your tasks, complete challenges, and earn rewards with your virtual avatar. Stay organized, motivated, and on top of your game. Your ultimate productivity companion!
+This document provides an overview, project spec, and wireframes for our team's capstone project: 
 
-If we had to describe this milestone in three (3) emojis, they would be: 🎮📑✨
+An app to where you can schedule your tasks, complete challenges, and earn rewards with your virtual avatar. Stay organized, motivated, and on top of your game. Your ultimate productivity companion!
+
+If we had to describe this milestone in three (3) emojis, they would be: **♥️🧙‍♀️🧜‍♀️🧑‍🚀🎲**
 
 ## Milestone Requirements
 
