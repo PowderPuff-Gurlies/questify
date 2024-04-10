@@ -9,11 +9,11 @@ Submitted by:
 - Anh Nguyen
 - Dung (Zoom) Nguyen
 
-Time spent: **300,000** hours spent in total
+Time spent: **3** hours spent in total
 
 ## Summary
 
-This document provides an overview, project spec, and wireframes for our team's capstone project: An app that **short description of your app**
+This document provides an overview, project spec, and wireframes for our team's capstone project: An app to where you can schedule your tasks, complete challenges, and earn rewards with your virtual avatar. Stay organized, motivated, and on top of your game. Your ultimate productivity companion!
 
 If we had to describe this milestone in three (3) emojis, they would be: **♥️🧙‍♀️🧜‍♀️🧑‍🚀🎲**
 
@@ -23,29 +23,24 @@ If we had to describe this milestone in three (3) emojis, they would be: **♥�
 
 The following REQUIRED features are completed:
 
-- [X] Creation of GitHub Organization and Group Project Repo
-- [ ] Updated Course Portal group info with Group Name and App Description
+- [x] Creation of GitHub Organization and Group Project Repo
+- [x] Updated Course Portal group info with Group Name and App Description
 
 The following REQUIRED files are included:
 
-- [ ] Included 📄 `brainstorming.md`, which contains:
-  - [ ] Our initial brainstorming ideas (6+ ideas)
-  - [ ] 5-category evaluation of our top 3 ideas
-  - [ ] Final app idea chosen
-- [ ] Included 📄 `project_spec.md`, which contains:
-  - [ ] App Overview: Description and evaluation
-  - [ ] App Spec: User features, Chosen API(s), User Interactions
-  - [ ] Wireframe image(s)
-
-The following BONUS features are implemented:
-
-- [ ] Added digital wireframe/mockup image(s)
-- [ ] Added a Video/GIF of an interactive prototype
-
-The following EXTRA features are implemented:
-
-- [ ] List anything else that you added to improve your submission!
+- [X] Included 📄 `brainstorming.md`, which contains:
+  - [X] Our initial brainstorming ideas (6+ ideas)
+  - [X] 5-category evaluation of our top 3 ideas
+  - [X] Final app idea chosen
+- [X] Included 📄 `project_spec.md`, which contains:
+  - [X] App Overview: Description and evaluation
+  - [X] App Spec: User features, Chosen API(s), User Interactions
+  - [X] Wireframe image(s)
 
 ## Notes
 
 Here's a place for any other notes on this milestone!
+
+## References
+- https://itch.io/game-assets/tag-asset-pack
+- https://developers.google.com/calendar/api/guides/overview
