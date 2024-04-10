@@ -10,6 +10,7 @@ Submitted by:
 - Dung (Zoom) Nguyen
 
 Time spent: **3** hours spent in total
+App Name: TBD
 
 ## Summary
 
