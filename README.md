@@ -5,7 +5,7 @@
 Submitted by:
 - Lydia Chen
 - Josie Goreczky
-- Jennifer Siao
+- Jennifer Siao 
 - Anh Nguyen
 - Dung (Zoom) Nguyen
 
