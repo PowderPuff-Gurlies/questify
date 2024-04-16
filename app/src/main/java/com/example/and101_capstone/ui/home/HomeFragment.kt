@@ -34,25 +34,21 @@ class HomeFragment : Fragment() {
 //            textView.text = it
 //        }
 
-        val hair1 = binding.hair1
-        val hair2 = binding.hair2
-        val hair3 = binding.hair3
-        val hair4 = binding.hair4
-        val hair5 = binding.hair5
-        val hair6 = binding.hair6
-        val hair7 = binding.hair7
-        val hair8 = binding.hair8
-        val hair9 = binding.hair9
+        val hair = binding.hair
+        val shirt = binding.shirt
+        val pants = binding.pants
+        val skin = binding.skin
+        val shoe = binding.shoe
+
+//        val backdrop = binding.backdrop
+//        Picasso.get().load(R.mipmap.brick).into(backdrop)
+
         // Used to display each asset
-        Picasso.get().load(R.mipmap.hair_1).into(hair1)
-        Picasso.get().load(R.mipmap.hair_2).into(hair2)
-        Picasso.get().load(R.mipmap.hair_3).into(hair3)
-        Picasso.get().load(R.mipmap.hair_4).into(hair4)
-        Picasso.get().load(R.mipmap.hair_5).into(hair5)
-        Picasso.get().load(R.mipmap.hair_6).into(hair6)
-        Picasso.get().load(R.mipmap.hair_7).into(hair7)
-        Picasso.get().load(R.mipmap.hair_8).into(hair8)
-        Picasso.get().load(R.mipmap.hair_9).into(hair9)
+        Picasso.get().load(R.mipmap.hair_1).into(hair)
+        Picasso.get().load(R.mipmap.shirt_1).into(shirt)
+        Picasso.get().load(R.mipmap.pants_1).into(pants)
+        Picasso.get().load(R.mipmap.skin_1).into(skin)
+        Picasso.get().load(R.mipmap.shoe_1).into(shoe)
 
         return root
     }
