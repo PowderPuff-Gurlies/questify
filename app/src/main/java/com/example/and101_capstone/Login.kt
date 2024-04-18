@@ -50,7 +50,7 @@ class Login : AppCompatActivity() {
         buttonLogin = findViewById(R.id.btn_login)
         progressBar = findViewById(R.id.progressBar)
         textView = findViewById(R.id.registerNow)
-        textView.setOnClickListener { view ->
+        textView.setOnClickListener {
             val intent = Intent(this@Login, Register::class.java)
             startActivity(intent)
             finish()
@@ -58,7 +58,7 @@ class Login : AppCompatActivity() {
 
         auth = Firebase.auth
 
-        buttonLogin.setOnClickListener { view ->
+        buttonLogin.setOnClickListener {
             progressBar.visibility = View.VISIBLE
             val email: String = editTextEmail.text.toString()
             val password: String = editTextPassword.text.toString()

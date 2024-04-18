@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        //Check if the user have logged in or not
         auth = FirebaseAuth.getInstance()
 
         if (auth.currentUser == null) {

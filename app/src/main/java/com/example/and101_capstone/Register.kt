@@ -49,7 +49,7 @@ class Register : AppCompatActivity() {
             finish()
         }
 
-        buttonReg.setOnClickListener { view ->
+        buttonReg.setOnClickListener {
             progressBar.visibility = View.VISIBLE
             val email: String = editTextEmail.text.toString()
             val password: String = editTextPassword.text.toString()
