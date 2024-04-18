@@ -1,6 +1,8 @@
 package com.example.and101_capstone
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -8,8 +10,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.and101_capstone.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
+    private lateinit var user: FirebaseUser
 
     private lateinit var binding: ActivityMainBinding
 
@@ -31,5 +38,18 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        auth = FirebaseAuth.getInstance()
+
+        if (auth.currentUser == null) {
+            val intent = Intent(applicationContext, Login::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        else {
+            user = auth.currentUser!!
+            Log.d("Firebase", "User Email: ${user.email}")
+        }
     }
 }
