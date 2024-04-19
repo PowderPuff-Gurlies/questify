@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">AND101-CAPSTONE</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard">Tasks</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="welcome">Welcome back, Traveler</string>
+    <string name="tasks">Quests</string>
+    <string name="coin_quantity">0</string>
+    <string name="default_text">Task</string>
+    <string name="image_content_default">IMAGE</string>
 </resources>

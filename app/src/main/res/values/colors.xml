@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="bg_blue">#658490</color>
+    <color name="dark_blue">#B340465b</color>
+    <color name="warm_red">#6e4a5e</color>
+    <color name="orange">#d9766b</color>
+    <color name="category1">#ffc16d</color>
+    <color name="category2">#b55b75</color>
+    <color name="category3">#c1d2c2</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="light_orange">#ffe29b</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

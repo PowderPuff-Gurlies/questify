@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/back_modal"
+        android:layout_width="380dp"
+        android:layout_height="800dp"
+        android:layout_marginTop="440dp"
+        android:background="@drawable/rounded_ui"
+        android:backgroundTint="@color/orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/back_modal_top"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="769dp"
+        android:background="@drawable/rounded_ui"
+        android:backgroundTint="@color/orange"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/back_modal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/front_modal"
+        android:layout_width="355dp"
+        android:layout_height="800dp"
+        android:layout_marginTop="448dp"
+        android:background="@drawable/rounded_ui"
+        android:backgroundTint="@color/light_orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/front_modal_top"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="776dp"
+        android:background="@drawable/rounded_ui"
+        android:backgroundTint="@color/light_orange"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/front_modal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/timer_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="288dp"
+        android:background="@drawable/rounded_ui"
+        android:backgroundTint="@color/warm_red"
+        android:gravity="center_vertical"
+        android:text="POMODO"
+        app:layout_constraintBottom_toTopOf="@+id/front_modal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="288dp"
+        android:background="@drawable/rounded_ui"
+        android:backgroundTint="@color/warm_red"
+        android:gravity="center_vertical"
+        android:text="ADD TASK"
+        app:layout_constraintBottom_toTopOf="@+id/front_modal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer_button"
+        app:layout_constraintVertical_bias="0.219" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="779dp"
+        android:background="@drawable/rounded_ui"
+        android:backgroundTint="@color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/front_modal"
+        app:layout_constraintStart_toStartOf="@+id/front_modal_top"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:tabMode="scrollable">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stats"
+            tools:layout_editor_absoluteX="40dp"
+            tools:layout_editor_absoluteY="421dp" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QUESTS"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="419dp" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AWARDS"
+            tools:layout_editor_absoluteX="181dp"
+            tools:layout_editor_absoluteY="461dp" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:src="@android:drawable/ic_input_add"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.982"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.561" />"-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
