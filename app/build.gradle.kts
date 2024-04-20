@@ -41,7 +41,6 @@ android {
 dependencies {
 //    implementation ("com.github.bumptech.glide:glide:4.11.0")
 //    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
-    implementation ("com.loopj.android:android-async-http:1.4.11") //for Async
     implementation ("com.google.android.material:material:1.5.0")
     implementation ("com.squareup.picasso:picasso:2.8")
     implementation("com.codepath.libraries:asynchttpclient:2.2.0")
