@@ -14,12 +14,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 data class Task(
-    val name: String,
+    val title: String,
     val dueDate: String,
-    val reward: String //this is the reward for completing the task
+    val reward: Int = 1     //this is the reward for completing the task, constant 1
 )
-class MainActivity : AppCompatActivity() {
 
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var taskList: MutableList<Task>  //TB used
 
