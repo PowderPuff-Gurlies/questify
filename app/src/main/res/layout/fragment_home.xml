@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--recycler view for the yellow box area of Home Page-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/task_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -49,7 +56,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.507"
         android:contentDescription="@string/image_content_default" />
-
 
     <ImageView
         android:id="@+id/shadow"
