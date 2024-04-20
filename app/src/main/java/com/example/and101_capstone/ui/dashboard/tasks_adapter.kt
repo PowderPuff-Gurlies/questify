@@ -7,9 +7,8 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.and101_capstone.R
-import okhttp3.internal.concurrent.Task
 
-class TaskAdapter(private val tasks: List<Task>) :
+class TaskAdapter(private val tasks: List<DashboardFragment.Task>) :
     RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -32,4 +31,9 @@ class TaskAdapter(private val tasks: List<Task>) :
         val textTaskTitle: TextView = view.findViewById(R.id.text_task_title)
         val checkboxTask: CheckBox = view.findViewById(R.id.checkbox_task)
     }
+
+    data class Task(
+        val title: String,
+        val completed: Boolean
+    )
 }
