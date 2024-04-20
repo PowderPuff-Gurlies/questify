@@ -13,7 +13,7 @@ class TaskAdapter(private val tasks: List<DashboardFragment.Task>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.task_item, parent, false)
+            .inflate(R.layout.task_items, parent, false)
         return TaskViewHolder(view)
     }
 
