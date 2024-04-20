@@ -13,9 +13,15 @@ import com.example.and101_capstone.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
+data class Task(
+    val name: String,
+    val dueDate: String,
+    val reward: String //this is the reward for completing the task
+)
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var taskList: MutableList<Task>  //TB used
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
