@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.and101_capstone.R
 import com.example.and101_capstone.databinding.FragmentHomeBinding
-import com.squareup.picasso.Picasso
 
 class HomeFragment : Fragment() {
 
@@ -29,26 +30,18 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val textView: TextView = binding.textHome
-//        homeViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
+        val addButton: Button = root.findViewById(R.id.add_button)
 
-        val hair = binding.hair
-        val shirt = binding.shirt
-        val pants = binding.pants
-        val skin = binding.skin
-        val shoe = binding.shoe
+        addButton.setOnClickListener {
+            // Show a toast message when the button is clicked
+            Toast.makeText(requireContext(), "Add button clicked", Toast.LENGTH_SHORT).show()
 
-//        val backdrop = binding.backdrop
-//        Picasso.get().load(R.mipmap.brick).into(backdrop)
+            val newView = inflater.inflate(R.layout.task_item, container, false)
 
-        // Used to display each asset
-        Picasso.get().load(R.mipmap.hair_1).into(hair)
-        Picasso.get().load(R.mipmap.shirt_1).into(shirt)
-        Picasso.get().load(R.mipmap.pants_1).into(pants)
-        Picasso.get().load(R.mipmap.skin_1).into(skin)
-        Picasso.get().load(R.mipmap.shoe_1).into(shoe)
+            // Replace the current view with the new view
+            (container?.parent as ViewGroup).removeAllViews()
+            (container?.parent as ViewGroup).addView(newView)
+        }
 
         return root
     }
