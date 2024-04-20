@@ -13,7 +13,7 @@ class TaskAdapter(private val tasks: List<DashboardFragment.Task>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.task_items, parent, false)
+            .inflate(R.layout.task_item, parent, false)
         return TaskViewHolder(view)
     }
 
@@ -28,8 +28,8 @@ class TaskAdapter(private val tasks: List<DashboardFragment.Task>) :
     }
 
     inner class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textTaskTitle: TextView = view.findViewById(R.id.task_title)
-        val checkboxTask: CheckBox = view.findViewById(R.id.task_checkbox)
+        val textTaskTitle: TextView = view.findViewById(R.id.task)
+        val checkboxTask: CheckBox = view.findViewById(R.id.checkBox)
     }
 
     data class Task(
