@@ -7,6 +7,10 @@ android {
     namespace = "com.example.and101_capstone"
     compileSdk = 34
 
+    packaging {
+        resources.merges.add("META-INF/DEPENDENCIES")
+    }
+
     defaultConfig {
         applicationId = "com.example.and101_capstone"
         minSdk = 26
@@ -41,6 +45,10 @@ android {
 dependencies {
 //    implementation ("com.github.bumptech.glide:glide:4.11.0")
 //    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
+    implementation("com.google.api-client:google-api-client:2.0.0")
+    implementation("com.google.oauth-client:google-oauth-client-jetty:1.34.1")
+    implementation("com.google.apis:google-api-services-calendar:v3-rev20220715-2.0.0")
+
     implementation ("com.google.android.material:material:1.5.0")
     implementation ("com.squareup.picasso:picasso:2.8")
     implementation("com.codepath.libraries:asynchttpclient:2.2.0")
