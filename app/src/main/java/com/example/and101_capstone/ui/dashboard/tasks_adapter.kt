@@ -7,8 +7,9 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.and101_capstone.R
+import com.example.and101_capstone.ui.home.Task
 
-class TaskAdapter(private val tasks: MutableList<Task>) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
+class TaskAdapter(private val taskList: List<Task>) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -17,17 +18,16 @@ class TaskAdapter(private val tasks: MutableList<Task>) : RecyclerView.Adapter<T
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
-        val task = tasks[position]
-        holder.textTaskTitle.text = task.title
-        holder.checkboxTask.isChecked = task.completed
+        val currentTask = taskList[position]
+        holder.textTaskTitle.text = currentTask.title
+        holder.checkboxTask.isChecked = currentTask.completed
     }
 
-    override fun getItemCount(): Int {
-        return tasks.size
-    }
+    override fun getItemCount() = taskList.size
 
     inner class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textTaskTitle: TextView = view.findViewById(R.id.task_title)
         val checkboxTask: CheckBox = view.findViewById(R.id.checkBox)
     }
 }
+

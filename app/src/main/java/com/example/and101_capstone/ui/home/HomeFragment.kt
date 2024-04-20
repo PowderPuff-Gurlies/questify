@@ -14,10 +14,13 @@ import com.example.and101_capstone.databinding.FragmentHomeBinding
 import com.example.and101_capstone.ui.dashboard.TaskAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.codepath.asynchttpclient.AsyncHttpClient
+import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import org.json.JSONObject
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.JsonHttpResponseHandler
 import cz.msebera.android.httpclient.Header
+import okhttp3.internal.http2.Header
 
 //uses task_item.xml: has task_title and task_dueDate
 //uses recycler view from fragment_home.xml: id is task_list
@@ -33,8 +36,8 @@ data class Task(
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    // Initialize the RecyclerView
     private lateinit var taskList: MutableList<Task> // Change this line
+    private lateinit var rvTasks: RecyclerView
     private lateinit var adapter: TaskAdapter // Declare adapter variable
 
     override fun onCreateView(
@@ -46,10 +49,13 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         binding.taskList.layoutManager = LinearLayoutManager(requireContext())
+
+        rvTasks = root.findViewById(R.id.task_list)
         taskList = mutableListOf()
         adapter = TaskAdapter(taskList)
 
-        binding.taskList.adapter = adapter
+        rvTasks.adapter = adapter // Set adapter
+        rvTasks.layoutManager = LinearLayoutManager(requireContext())
 
         val addButton: Button = root.findViewById(R.id.add_button)
         addButton.setOnClickListener {
