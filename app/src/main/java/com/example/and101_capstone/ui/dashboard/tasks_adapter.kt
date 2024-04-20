@@ -8,12 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.and101_capstone.R
 
-class TaskAdapter(private val tasks: List<DashboardFragment.Task>) :
-    RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
+class TaskAdapter(private val tasks: MutableList<Task>) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.task_items, parent, false)
+            .inflate(R.layout.task_item, parent, false)
         return TaskViewHolder(view)
     }
 
@@ -29,11 +28,6 @@ class TaskAdapter(private val tasks: List<DashboardFragment.Task>) :
 
     inner class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textTaskTitle: TextView = view.findViewById(R.id.task_title)
-        val checkboxTask: CheckBox = view.findViewById(R.id.task_checkbox)
+        val checkboxTask: CheckBox = view.findViewById(R.id.checkBox)
     }
-
-    data class Task(
-        val title: String,
-        val completed: Boolean
-    )
 }
