@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
             // Show a toast message when the button is clicked
             Toast.makeText(requireContext(), "Add button clicked", Toast.LENGTH_SHORT).show()
 
-            val newView = inflater.inflate(R.layout.task_form, container, false)
+            val newView = inflater.inflate(R.layout.task_item, container, false)
 
             // Replace the current view with the new view
             (container?.parent as ViewGroup).removeAllViews()
