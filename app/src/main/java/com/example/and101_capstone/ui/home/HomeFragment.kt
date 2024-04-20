@@ -16,11 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
-import org.json.JSONObject
-import com.loopj.android.http.AsyncHttpClient
-import com.loopj.android.http.JsonHttpResponseHandler
-import cz.msebera.android.httpclient.Header
 import okhttp3.internal.http2.Header
+import org.json.JSONObject
 
 //uses task_item.xml: has task_title and task_dueDate
 //uses recycler view from fragment_home.xml: id is task_list
