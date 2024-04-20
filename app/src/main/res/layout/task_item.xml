@@ -1,31 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
 
-    <!--task_item is for the Google Calendar API tasks and its attributes-->
-    <!--THIS IS THE TITLE OF THE TASK-->
+<!-- Text view for "Tasks" -->
     <TextView
-        android:id="@+id/task_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:id="@+id/task"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@drawable/rectangle2"
         android:fontFamily="@font/regular_pixel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" /> <!-- Added this line -->
+        android:padding="17.5dp"
+        android:text="@string/default_text" />
 
-    <!--this is the task's due date according to Google Calendar API-->
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@color/bg_blue"
+        android:backgroundTint="@color/category2"
+        android:buttonTint="@color/white"
+        android:checked="false"
+        android:textColor="@color/white" />
+
+<!--this is the task's due date according to Google Calendar API-->
     <TextView
         android:id="@+id/task_dueDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:fontFamily="@font/regular_pixel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/task_title" /> <!-- Added this line -->
+        android:fontFamily="@font/regular_pixel" /> <!-- Added this line -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+
 
