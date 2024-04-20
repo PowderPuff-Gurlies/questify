@@ -8,5 +8,5 @@
     <string name="coin_quantity">0</string>
     <string name="default_text">Task</string>
     <string name="image_content_default">IMAGE</string>
-    <string name="close_button">Close Button</string>
+    <string name="close_button">✕</string>
 </resources>
