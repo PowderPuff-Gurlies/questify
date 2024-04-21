@@ -32,8 +32,8 @@ class DashboardFragment : Fragment() {
 
 
 
-        val recyclerView: RecyclerView = binding.recyclerViewTasks
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+//        val recyclerView: RecyclerView = binding.recyclerViewTasks
+//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         // Sample list of tasks (Replace with your actual data source)
         val tasks: List<Task> = listOf(
@@ -43,8 +43,8 @@ class DashboardFragment : Fragment() {
         )
 
         // Create an instance of TaskAdapter and set it to RecyclerView
-        val adapter = TaskAdapter(tasks)
-        recyclerView.adapter = adapter
+//        val adapter = TaskAdapter(tasks)
+//        recyclerView.adapter = adapter
 
         return root
     }

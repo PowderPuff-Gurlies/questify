@@ -61,45 +61,45 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), Task::class.java)
             startActivity(intent)
         }
-        getTasksFromGoogleCalendar()
+        //getTasksFromGoogleCalendar()
         return root
     }
 
-    private fun getTasksFromGoogleCalendar() {
-        val client = AsyncHttpClient()
-        for (i in 1..30) { // Fetch from API here
-            val url = "google id for API call here"
-            client.get(url, object : JsonHttpResponseHandler() {
-                override fun onSuccess(
-                    statusCode: Int,
-                    headers: Array<Header>?,
-                    response: JSONObject?
-                ) {
-                    val title = response?.getString("task title")
-                    val dueDate = response?.getJSONArray("task due date")
-                    if (title != null && dueDate != null) {
-                        val task = Task(
-                            title,
-                            dueDate="10/10",  //should be changed from API
-                            completed = false,
-                            reward = 1
-                        )
-                        taskList.add(task) // Add the task object to the list
-                        activity?.runOnUiThread { // update UI
-                            adapter.notifyDataSetChanged()
-                        }
-                    }
-                }
-
-                override fun onFailure(
-                    statusCode: Int,
-                    headers: Array<Header>?,
-                    throwable: Throwable,
-                    errorResponse: JSONObject?
-                ) {
-                    Log.d("Task Error", throwable?.message ?: "Unknown error")
-                }
-            })
-        }
-    }
+//    private fun getTasksFromGoogleCalendar() {
+//        val client = AsyncHttpClient()
+//        for (i in 1..30) { // Fetch from API here
+//            val url = "google id for API call here"
+//            client.get(url, object : JsonHttpResponseHandler() {
+//                override fun onSuccess(
+//                    statusCode: Int,
+//                    headers: Array<Header>?,
+//                    response: JSONObject?
+//                ) {
+//                    val title = response?.getString("task title")
+//                    val dueDate = response?.getJSONArray("task due date")
+//                    if (title != null && dueDate != null) {
+//                        val task = Task(
+//                            title,
+//                            dueDate="10/10",  //should be changed from API
+//                            completed = false,
+//                            reward = 1
+//                        )
+//                        taskList.add(task) // Add the task object to the list
+//                        activity?.runOnUiThread { // update UI
+//                            adapter.notifyDataSetChanged()
+//                        }
+//                    }
+//                }
+//
+//                override fun onFailure(
+//                    statusCode: Int,
+//                    headers: Array<Header>?,
+//                    throwable: Throwable,
+//                    errorResponse: JSONObject?
+//                ) {
+//                    Log.d("Task Error", throwable?.message ?: "Unknown error")
+//                }
+//            })
+//        }
+//    }
 }

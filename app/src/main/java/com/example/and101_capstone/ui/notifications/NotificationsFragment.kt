@@ -1,14 +1,22 @@
 package com.example.and101_capstone.ui.notifications
 
+import android.os.Build
 import android.os.Bundle
+import android.os.StrictMode
+import android.os.StrictMode.ThreadPolicy
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.viewModelScope
+import com.example.and101_capstone.R
 import com.example.and101_capstone.databinding.FragmentNotificationsBinding
-import com.example.and101_capstone.ui.CalendarQuickstart
+import com.example.and101_capstone.ui.notifications.CalendarQuickstart.signIn
+import kotlinx.coroutines.launch
+
 
 class NotificationsFragment : Fragment() {
 
@@ -33,8 +41,22 @@ class NotificationsFragment : Fragment() {
         notificationsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-        CalendarQuickstart.main(requireContext())
 
+       //val view: View = inflater!!.inflate(R.layout.fragment_notifications, container, false)
+
+        //view.findViewById<View>(R.id.google_sign_in_button).setOnClickListener {
+            viewLifecycleOwner.lifecycleScope.launch {
+                val SDK_INT = Build.VERSION.SDK_INT
+                if (SDK_INT > 8) {
+                    val policy = ThreadPolicy.Builder()
+                        .permitAll().build()
+                    StrictMode.setThreadPolicy(policy)
+                    //your codes here
+                    signIn(requireContext())
+                    //CalendarQuickstart.main(requireContext())
+                }
+            }
+        //}
         return root
     }
 
@@ -42,4 +64,10 @@ class NotificationsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+//    private lateinit var mGoogleSignInClient: GoogleSignInClient
+//
+//    mGoogleSignInClient = GoogleSignIn.getClient(this, null)
+
+
 }
