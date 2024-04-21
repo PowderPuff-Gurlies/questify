@@ -29,9 +29,6 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
-
-
         val recyclerView: RecyclerView = binding.recyclerViewTasks
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 

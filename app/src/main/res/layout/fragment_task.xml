@@ -5,34 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Flow component -->
-
-<!--    <androidx.constraintlayout.helper.widget.Flow-->
-<!--        android:id="@+id/close_flow"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:constraint_referenced_ids="close_button"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/textView4"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/textView4"-->
-<!--        app:layout_constraintHorizontal_bias="0.933"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/textView4"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/textView4"-->
-<!--        app:layout_constraintVertical_bias="0.031" />-->
-
-<!--    <androidx.constraintlayout.helper.widget.Flow-->
-<!--        android:id="@+id/save_flow"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:constraint_referenced_ids="create_new_task"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/textView4"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/textView4"-->
-<!--        app:layout_constraintHorizontal_bias="0.498"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/textView4"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/textView4"-->
-<!--        app:layout_constraintVertical_bias="0.976" />-->
-
     <!-- below is for the recycler view of tasks-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tasks_list"

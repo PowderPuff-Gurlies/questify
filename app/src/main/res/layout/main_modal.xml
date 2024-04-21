@@ -67,7 +67,7 @@
         android:background="@drawable/rounded_ui"
         android:backgroundTint="@color/warm_red"
         android:gravity="center_vertical"
-        android:text="POMODO"
+        android:text="POMODORO"
         app:layout_constraintBottom_toTopOf="@+id/front_modal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -81,7 +81,7 @@
         android:background="@drawable/rounded_ui"
         android:backgroundTint="@color/warm_red"
         android:gravity="center_vertical"
-        android:text="ADD TASK"
+        android:text="@string/add_task"
         app:layout_constraintBottom_toTopOf="@+id/front_modal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/timer_button"
@@ -122,6 +122,16 @@
             tools:layout_editor_absoluteX="181dp"
             tools:layout_editor_absoluteY="461dp" />
     </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabs"
+        app:layout_constraintVertical_bias="1.0" />
 
     <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
 <!--        android:layout_width="wrap_content"-->
