@@ -47,6 +47,9 @@ dependencies {
 //    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
 //    implementation("com.google.api-client:google-api-client:2.0.0")
 //    implementation("com.google.oauth-client:google-oauth-client-jetty:1.34.1")
+    implementation("net.openid:appauth:0.11.1")
+
+
     implementation("androidx.credentials:credentials:1.2.2")
     implementation("androidx.credentials:credentials-play-services-auth:1.2.2")
     implementation("com.google.android.libraries.identity.googleid:googleid:1.1.0")

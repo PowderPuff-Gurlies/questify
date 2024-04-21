@@ -52,6 +52,7 @@ class NotificationsFragment : Fragment() {
                         .permitAll().build()
                     StrictMode.setThreadPolicy(policy)
                     //your codes here
+//                    CalendarQuickstart.main1()
                     signIn(requireContext())
                     //CalendarQuickstart.main(requireContext())
                 }
