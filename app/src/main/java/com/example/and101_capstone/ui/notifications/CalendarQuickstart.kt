@@ -15,6 +15,9 @@ import androidx.credentials.PasswordCredential
 import androidx.credentials.PublicKeyCredential
 import androidx.credentials.exceptions.GetCredentialException
 import com.example.and101_capstone.R
+import com.example.and101_capstone.ui.task.Task
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.common.api.ApiException
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.android.libraries.identity.googleid.GoogleIdTokenParsingException
@@ -80,6 +83,7 @@ object CalendarQuickstart {
 //    attempt 1, following the quickstart tutorial
     private fun getCredentials(context: Context, HTTP_TRANSPORT: NetHttpTransport): Credential {
         // Load client secrets.
+
         val `in`: InputStream = context.resources.openRawResource(CREDENTIALS_FILE_ID)
 
         val clientSecrets =
@@ -87,6 +91,8 @@ object CalendarQuickstart {
                 JSON_FACTORY,
                 InputStreamReader(`in`)
             )
+
+
 
         // Build flow and trigger user authorization request.
         val tokenFolder = File(context.getExternalFilesDir("")?.absolutePath + TOKENS_DIRECTORY_PATH)
@@ -117,6 +123,23 @@ object CalendarQuickstart {
         return ab.authorize("user")
         //return AuthorizationCodeInstalledApp(flow, receiver).authorize("user")
     }
+
+//    Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+//    try {
+//        GoogleSignInAccount account = task.getResult(ApiException.class);
+//
+//        // request a one-time authorization code that your server exchanges for an
+//        // access token and sometimes refresh token
+//        String authCode = account.getServerAuthCode();
+//
+//        // Show signed-in UI
+//        updateUI(account);
+//
+//        // TODO(developer): send code to server and exchange for access/refresh/ID tokens
+//    } catch (ApiException e) {
+//        Log.w(TAG, "Sign-in failed", e);
+//        updateUI(null);
+//    }
 
     @Throws(IOException::class, GeneralSecurityException::class)
     @JvmStatic
@@ -171,7 +194,7 @@ object CalendarQuickstart {
                 .getString("client_id")
 
         val googleIdOption: GetGoogleIdOption = GetGoogleIdOption.Builder()
-            .setFilterByAuthorizedAccounts(false)
+            .setFilterByAuthorizedAccounts(true)
             .setServerClientId(serverClientId)
             //.setNonce("Wait a moment, generating Google ID Token")
             .build()
