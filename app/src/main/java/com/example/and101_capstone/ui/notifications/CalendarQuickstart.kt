@@ -24,7 +24,9 @@ import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInsta
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport
+import com.google.api.client.http.HttpTransport
 import com.google.api.client.http.javanet.NetHttpTransport
 import com.google.api.client.json.JsonFactory
 import com.google.api.client.json.gson.GsonFactory
@@ -66,6 +68,7 @@ object CalendarQuickstart {
     private const val CREDENTIALS_FILE_PATH = "app/src/main/res/raw/credentials.json"
     private var CREDENTIALS_FILE_ID = R.raw.credentials
 
+
     /**
      * Creates an authorized Credential object.
      *
@@ -74,11 +77,9 @@ object CalendarQuickstart {
      * @throws IOException If the credentials.json file cannot be found.
      */
     @Throws(IOException::class)
+//    attempt 1, following the quickstart tutorial
     private fun getCredentials(context: Context, HTTP_TRANSPORT: NetHttpTransport): Credential {
         // Load client secrets.
-//        val `in` =
-//            CalendarQuickstart::class.java.getResourceAsStream(CREDENTIALS_FILE_PATH)
-//                ?: throw FileNotFoundException("Resource not found: " + CREDENTIALS_FILE_PATH)
         val `in`: InputStream = context.resources.openRawResource(CREDENTIALS_FILE_ID)
 
         val clientSecrets =
@@ -88,10 +89,6 @@ object CalendarQuickstart {
             )
 
         // Build flow and trigger user authorization request.
-//        val tokenFolder = File(
-//            Environment.getExternalStorageDirectory().toString() +
-//                    File.separator + TOKENS_DIRECTORY_PATH
-//        )
         val tokenFolder = File(context.getExternalFilesDir("")?.absolutePath + TOKENS_DIRECTORY_PATH)
         if (!tokenFolder.exists()) {
             tokenFolder.mkdirs()
@@ -104,23 +101,7 @@ object CalendarQuickstart {
             .setAccessType("offline")
             .build()
 
-//        val flow =
-//            GoogleAuthorizationCodeFlow.Builder(
-//                HTTP_TRANSPORT,
-//                JSON_FACTORY,
-//                clientSecrets,
-//                SCOPES
-//            )
-//                .setDataStoreFactory(
-//                    FileDataStoreFactory(
-//                        File(
-//                            TOKENS_DIRECTORY_PATH
-//                        )
-//                    )
-//                )
-//                .setAccessType("offline")
-//                .build()
-        val receiver = LocalServerReceiver.Builder().setPort(8888).build()
+        //val receiver = LocalServerReceiver.Builder().setPort(8888).build()
         //returns an authorized Credential object.
 
         val ab: AuthorizationCodeInstalledApp =
@@ -170,6 +151,7 @@ object CalendarQuickstart {
         }
     }
 
+    // Attempt 2 :
     suspend fun signIn(context: Context) {
         val inputStream = context.resources.openRawResource(CREDENTIALS_FILE_ID)
         val reader = BufferedReader(InputStreamReader(inputStream))
@@ -194,25 +176,19 @@ object CalendarQuickstart {
             //.setNonce("Wait a moment, generating Google ID Token")
             .build()
 
-        Log.d("google id option", googleIdOption.toString())
-
         val request: GetCredentialRequest = GetCredentialRequest.Builder()
             .addCredentialOption(googleIdOption)
             .build()
-
-        Log.d("request", request.toString())
-
 
         val credentialManager = CredentialManager.create(context)
         coroutineScope {launch {
                 try {
 //                    val credentialManager = CredentialManager()
                     Log.d("hielel", "toehtui")
-                    Log.d("error place", "$credentialManager.getCredential(context = context, request = request)")
+                   // Log.d("error place", "$credentialManager.getCredential(context = context, request = request)")
                     val result = credentialManager.getCredential(context, request)
                     Log.d("hielel2", "hi")
                     handleSignIn(result)
-                    Log.d("three", "trhiuh")
                 } catch (e: GetCredentialException) {
                     Log.d("credential manager", "error fetching cred: ${e.errorMessage}", e)
                     Log.d("error", "coroutine scope failed")
@@ -267,7 +243,22 @@ object CalendarQuickstart {
         }
 
 
-    fun fetchEvents(){}
+    fun fetchEvents(calendarService: Calendar) {
+        try {
+            val events = calendarService.events().list("primary").execute()
+            val items = events.items
+            if (items.isEmpty()) {
+                println("No upcoming events found.")
+            } else {
+                println("Upcoming events:")
+                for (event in items) {
+                    println("${event.summary} (${event.start.dateTime})")
+                }
+            }
+        } catch (e: IOException) {
+            println("Error fetching events: ${e.message}")
+        }
+    }
 
     fun addEvents(){}
     }
