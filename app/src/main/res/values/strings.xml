@@ -9,4 +9,6 @@
     <string name="default_text">Task</string>
     <string name="image_content_default">IMAGE</string>
     <string name="close_button">✕</string>
+    <string name="auth_failed_message">Google Sign In Failed. Please try again.</string>
+    <string name="auth_success_message">Google Sign In Successful.</string>
 </resources>

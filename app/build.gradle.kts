@@ -19,6 +19,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders["appAuthRedirectScheme"] = "com.example.and101_capstone.oauth2callback"
     }
 
     buildTypes {
@@ -48,7 +50,6 @@ dependencies {
 //    implementation("com.google.api-client:google-api-client:2.0.0")
 //    implementation("com.google.oauth-client:google-oauth-client-jetty:1.34.1")
     implementation("net.openid:appauth:0.11.1")
-
 
     implementation("androidx.credentials:credentials:1.2.2")
     implementation("androidx.credentials:credentials-play-services-auth:1.2.2")

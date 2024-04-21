@@ -1,94 +1,91 @@
 package com.example.and101_capstone.ui.notifications;
 
-import android.content.Context;
-import android.content.Context.MODE_PRIVATE;
+import static android.content.Context.MODE_PRIVATE;
 
-class TokenStorage(private val context: Context) {
-    private val tokenData: TokenData? = null
-    private val applicationName = "com.authsamples.basicmobileapp"
-    private val key = "AUTH_STATE"
-    private val sharedPrefs = context.getSharedPreferences(applicationName, MODE_PRIVATE)
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import com.google.gson.Gson;
+
+import com.google.android.gms.auth.TokenData;
+
+class TokenStorage {
+    private final SharedPreferences sharedPrefs;
+    private TokenData tokenData = null;
+    private String applicationName = "com.authsamples.basicmobileapp";
+    private final String key = "AUTH_STATE";
+
+    public TokenStorage(Context context) {
+        sharedPrefs = context.getSharedPreferences(applicationName, MODE_PRIVATE);
+    }
 
     /*
      * Load token data from storage on application startup
      */
-    fun loadTokens() {
-
+    public void loadTokens() {
         try {
-
             // Try the load
-            val data = this.sharedPrefs.getString(this.key, "")
-            if (data.isNullOrBlank()) {
-                return
+            String data = sharedPrefs.getString(key, "");
+            if (!data.isEmpty() && !data.trim().isEmpty()) {
+                // Try to deserialize
+                Gson gson = new Gson();
+                tokenData = gson.fromJson(data, TokenData.class);
             }
-
-            // Try to deserialize
-            val gson = Gson()
-            this.tokenData = gson.fromJson(data, TokenData::class.java)
-
-        } catch (ex: Throwable) {
-
+        } catch (Throwable ex) {
             // Require a new login if there are problems loading tokens
-            val uiError = ErrorFactory().fromException(ex)
-            ErrorConsoleReporter.output(uiError, context)
+            System.out.println("An error occurred: " + ex.getMessage());
         }
     }
-
     /*
      * Get tokens if the user has logged in or they have been loaded from storage
      */
-    fun getTokens(): TokenData? {
-        return this.tokenData
+    public TokenData getTokens() {
+        return this.tokenData;
     }
 
     /*
      * Save tokens to stored preferences
      */
-    fun saveTokens(newTokenData: TokenData) {
-
-        this.tokenData = newTokenData
-        this.saveTokenData()
+    public void saveTokens(TokenData newTokenData) {
+        this.tokenData = newTokenData;
+        this.saveTokenData();
     }
 
     /*
      * Remove tokens from storage
      */
-    fun removeTokens() {
-
-        this.tokenData = null
-        this.sharedPrefs.edit().remove(this.key).apply()
+    public void removeTokens() {
+        this.tokenData = null;
+        this.sharedPrefs.edit().remove(this.key).apply();
     }
 
     /*
      * A hacky method for testing, to update token storage to make the access token act like it is expired
      */
-    fun expireAccessToken() {
-
+    public void expireAccessToken() {
         if (this.tokenData != null) {
-            this.tokenData!!.accessToken = "${this.tokenData!!.accessToken}x"
-            this.saveTokenData()
+            this.tokenData.accessToken = this.tokenData.accessToken + "x";
+            this.saveTokenData();
         }
     }
-
     /*
      * A hacky method for testing, to update token storage to make the refresh token act like it is expired
      */
-    fun expireRefreshToken() {
-
+    public void expireRefreshToken() {
         if (this.tokenData != null) {
-            this.tokenData!!.accessToken = "${this.tokenData!!.accessToken}x"
-            this.tokenData!!.refreshToken = "${this.tokenData!!.refreshToken}x"
-            this.saveTokenData()
+            this.tokenData.accessToken = this.tokenData.accessToken + "x";
+            this.tokenData.refreshToken = this.tokenData.refreshToken + "x";
+            this.saveTokenData();
         }
     }
 
     /*
      * Save tokens to stored preferences
      */
-    private fun saveTokenData() {
-        val gson = Gson()
-        val data = gson.toJson(this.tokenData!!)
-        this.sharedPrefs.edit().putString(this.key, data).apply()
+    private void saveTokenData() {
+        Gson gson = new Gson();
+        String data = gson.toJson(this.tokenData);
+        this.sharedPrefs.edit().putString(this.key, data).apply();
     }
 }
 

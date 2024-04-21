@@ -1,5 +1,6 @@
 package com.example.and101_capstone.ui.notifications
 
+
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -13,6 +14,7 @@ import net.openid.appauth.ResponseTypeValues
 import android.util.Log
 import net.openid.appauth.AppAuthConfiguration
 import net.openid.appauth.NoClientAuthentication
+import net.openid.appauth.TokenResponse
 import net.openid.appauth.browser.BrowserAllowList
 import net.openid.appauth.browser.BrowserMatcher
 import net.openid.appauth.browser.VersionedBrowserMatcher
@@ -85,9 +87,7 @@ class Authenticator(private val configuration: OAuthConfiguration, private val a
      * Do the work to perform an authorization redirect
      */
     override fun startLogin(launchAction: (i: Intent) -> Unit) {
-
         try {
-
             val authService = AuthorizationService(this.applicationContext, this.getBrowserConfiguration())
             this.loginAuthService = authService
 
@@ -98,8 +98,8 @@ class Authenticator(private val configuration: OAuthConfiguration, private val a
                 this.configuration.clientId,
                 ResponseTypeValues.CODE,
                 Uri.parse(this.getLoginRedirectUri())
-            )
-                .setScope(this.configuration.scope)
+            ).setScope(this.configuration.scope)
+
             val request = builder.build()
 
             // Do the AppAuth redirect
@@ -111,6 +111,7 @@ class Authenticator(private val configuration: OAuthConfiguration, private val a
             //throw ErrorFactory().fromLoginOperationError(ex, ErrorCodes.loginRequestFailed)
         }
     }
+
 
     /*
      * When a login redirect completes, process the login response here
@@ -156,9 +157,7 @@ class Authenticator(private val configuration: OAuthConfiguration, private val a
         return suspendCoroutine { continuation ->
 
             // Define a callback to handle the result of the authorization code grant
-            val callback =
-                AuthorizationService.TokenResponseCallback { tokenResponse, ex ->
-
+            val callback = AuthorizationService.TokenResponseCallback { tokenResponse, ex ->
                     when {
                         // Translate AppAuth errors to the display format
                         ex != null -> {
@@ -226,7 +225,6 @@ class Authenticator(private val configuration: OAuthConfiguration, private val a
     }
 
 
-
     override fun startLogout(launchAction: (i: Intent) -> Unit) {
         TODO("Not yet implemented")
     }
@@ -240,10 +238,22 @@ class Authenticator(private val configuration: OAuthConfiguration, private val a
     }
 
     override fun expireAccessToken() {
-        TODO("Not yet implemented")
+        tokenStorage.expireAccessToken()
     }
 
     override fun expireRefreshToken() {
+        tokenStorage.expireRefreshToken()
+    }
+
+    override fun getMetadata() {
         TODO("Not yet implemented")
+    }
+
+    override fun getLoginRedirectUri(): String? {
+        TODO("Not yet implemented")
+    }
+
+    override fun saveTokens(tokenResponse: TokenResponse) {
+        tokenStorage.saveTokens()
     }
 }

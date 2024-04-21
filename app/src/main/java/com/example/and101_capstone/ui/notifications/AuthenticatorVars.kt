@@ -1,6 +1,7 @@
 package com.example.and101_capstone.ui.notifications
 
 import android.content.Intent
+import net.openid.appauth.TokenResponse
 
 interface AuthenticatorVars {
 
@@ -34,4 +35,7 @@ interface AuthenticatorVars {
 
     // For testing, make the refresh token act expired
     fun expireRefreshToken()
+    fun getMetadata()
+    abstract fun getLoginRedirectUri(): String?
+    fun saveTokens(tokenResponse: TokenResponse)
 }

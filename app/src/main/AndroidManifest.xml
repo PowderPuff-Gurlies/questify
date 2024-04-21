@@ -20,6 +20,10 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <meta-data
+            android:name="com.example.and101_capstone.oauth2callback"
+            android:value="${appAuthRedirectScheme}" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -34,10 +38,10 @@
             android:name=".ui.task.Task"
             android:label="TaskFragment">
         </activity>
-        <activity
-            android:name=".ui.task.HomeFragment"
-            android:label="HomeFragment">
-        </activity>
+<!--        <activity-->
+<!--            android:name=".ui.task.HomeFragment"-->
+<!--            android:label="HomeFragment">-->
+<!--        </activity>-->
     </application>
 
 </manifest>

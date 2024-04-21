@@ -49,9 +49,5 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-//
-//        val textView = findViewById<View>(R.id.main_text) as TextView
-//        val typeface = Typeface.createFromAsset(resources.assets, "fonts/regular_pixel.ttf")
-//        textView.setTypeface(typeface)
     }
 }
