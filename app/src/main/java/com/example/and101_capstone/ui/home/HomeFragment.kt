@@ -1,5 +1,6 @@
 package com.example.and101_capstone.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.and101_capstone.R
 import com.example.and101_capstone.databinding.FragmentHomeBinding
+import com.example.and101_capstone.ui.task.Task
 import com.example.and101_capstone.ui.dashboard.TaskAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,32 +33,33 @@ data class Task(
 )
 
 class HomeFragment : Fragment() {
+
     private var _binding: FragmentHomeBinding? = null
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
     private val binding get() = _binding!!
-    private lateinit var taskList: MutableList<Task> // Change this line
-    private lateinit var rvTasks: RecyclerView
-    private lateinit var adapter: TaskAdapter // Declare adapter variable
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        val homeViewModel =
+            ViewModelProvider(this).get(HomeViewModel::class.java)
+
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.taskList.layoutManager = LinearLayoutManager(requireContext())
-
-        rvTasks = root.findViewById(R.id.task_list)
-        taskList = mutableListOf()
-        adapter = TaskAdapter(taskList)
-
-        rvTasks.adapter = adapter // Set adapter
-        rvTasks.layoutManager = LinearLayoutManager(requireContext())
-
         val addButton: Button = root.findViewById(R.id.add_button)
+
         addButton.setOnClickListener {
+            // Show a toast message when the button is clicked
             Toast.makeText(requireContext(), "Add button clicked", Toast.LENGTH_SHORT).show()
+
+            // Replace the current view with the new view
+            val intent = Intent(requireContext(), Task::class.java)
+            startActivity(intent)
         }
         getTasksFromGoogleCalendar()
         return root
@@ -100,4 +103,3 @@ class HomeFragment : Fragment() {
         }
     }
 }
-
