@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.and101_capstone.databinding.FragmentDashboardBinding
 
 // In your activity or fragment
+//this file recieves the done tasks and places them in the doneTasks list
+//this list then shows through the recycler view
+
 class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
