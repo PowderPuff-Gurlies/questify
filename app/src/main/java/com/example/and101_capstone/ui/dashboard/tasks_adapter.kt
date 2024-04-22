@@ -1,6 +1,6 @@
 package com.example.and101_capstone.ui.dashboard
 
-import com.example.and101_capstone.ui.task.Task
+import com.example.and101_capstone.ui.task.TaskData // Add this line
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.and101_capstone.R
 
-class TaskAdapter(private val taskList: List<Task>) : RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
+class TaskAdapter(private val taskList: List<TaskData>) : RecyclerView.Adapter<TaskAdapter.ViewHolder>()  {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val taskTitle: TextView = view.findViewById(R.id.task_title)
         val taskDueDate: TextView = view.findViewById(R.id.task_dueDate)

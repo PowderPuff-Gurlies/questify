@@ -1,14 +1,21 @@
 package com.example.and101_capstone.ui.task
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import com.example.and101_capstone.R
 import com.example.and101_capstone.ui.home.HomeFragment
+
+data class TaskData (
+    val title: String,
+    val dueDate: String,
+    val completed: Boolean, //whether task has been completed or not
+    val reward: Int = 1     //this is the reward for completing the task, constant 1
+)
 
 class Task : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,18 +37,20 @@ class Task : AppCompatActivity() {
             // Show a toast message when the button is clicked
             Toast.makeText(this, "Close button clicked", Toast.LENGTH_SHORT).show()
 
-            // Replace the current activity with the HomeActivity
-            val intent = Intent(this, HomeFragment::class.java)
-            startActivity(intent)
+            // Replace the current fragment with the HomeFragment
+            val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.container, HomeFragment())
+            transaction.commit()
         }
 
         saveButton.setOnClickListener {
             // Show a toast message when the button is clicked
             Toast.makeText(this, "Save button clicked", Toast.LENGTH_SHORT).show()
 
-            // Replace the current activity with the HomeActivity
-            val intent = Intent(this, HomeFragment::class.java)
-            startActivity(intent)
+            // Replace the current fragment with the HomeFragment
+            val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.container, HomeFragment())
+            transaction.commit()
         }
     }
 }

@@ -27,13 +27,6 @@ import com.example.and101_capstone.ui.dashboard.TaskAdapter
 //uses recycler view from fragment_home.xml: id is task_list
 //PUT TO API using create event through the "Add Tasks" button
 
-data class Task(
-    val title: String,
-    val dueDate: String,
-    val completed: Boolean, //whether task has been completed or not
-    val reward: Int = 1     //this is the reward for completing the task, constant 1
-)
-
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
