@@ -73,16 +73,18 @@ class HomeFragment : Fragment() {
 
     private fun getTasksFromGoogleCalendar() {
         val client = AsyncHttpClient()
-        for (i in 1..30) { // Fetch from API here
-            val url = "google id for API call here"
-            client.get(url, object : JsonHttpResponseHandler() {
-                override fun onSuccess(
-                    statusCode: Int,
-                    headers: Header?,
-                    response: JSONObject?
-                ) {
-                    val title = response?.getString("task title")
-                    val dueDate = response?.getString("task due date")
+        val url = "google id for API call here"
+        client.get(url, object : JsonHttpResponseHandler() {
+            override fun onSuccess(
+                statusCode: Int,
+                headers: Headers?,
+                response: JSONObject?
+            ) {
+                val events = response?.getJSONArray("events") // Replace "events" with the actual key
+                for (i in 0 until events?.length()) {
+                    val event = events?.getJSONObject(i)
+                    val title = event?.getString("summary") // Replace "summary" with the actual key
+                    val dueDate = event?.getString("start") // Replace "start" with the actual key
                     if (title != null && dueDate != null) {
                         val task = Task(
                             title,
@@ -96,16 +98,18 @@ class HomeFragment : Fragment() {
                         }
                     }
                 }
+            }
 
-                override fun onFailure(
-                    statusCode: Int,
-                    headers: Header?,
-                    throwable: Throwable,
-                    errorResponse: JSONObject?
-                ) {
-                    Log.d("Task Error", throwable?.message ?: "Unknown error")
-                }
+            override fun onFailure(
+                statusCode: Int,
+                headers: Headers?,
+                throwable: Throwable,
+                errorResponse: JSONObject?
+            ) {
+                Log.d("Task Error", throwable?.message ?: "Unknown error")
+            }
+        })
+
 })
-}
 }
 }
