@@ -27,9 +27,10 @@
             android:label="TaskFragment">
         </activity>
         <activity
-            android:name=".ui.task.HomeFragment"
+            android:name=".ui.home.HomeFragment"
             android:label="HomeFragment">
         </activity>
+
     </application>
 
 </manifest>

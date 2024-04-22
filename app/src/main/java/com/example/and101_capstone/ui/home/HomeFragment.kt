@@ -11,6 +11,8 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
@@ -18,8 +20,8 @@ import com.example.and101_capstone.R
 import com.example.and101_capstone.databinding.FragmentHomeBinding
 import com.example.and101_capstone.ui.task.Task
 import com.google.android.material.tabs.TabLayout
-import okhttp3.internal.http2.Header
 import org.json.JSONObject
+import com.example.and101_capstone.ui.dashboard.TaskAdapter
 
 //uses task_item.xml: has task_title and task_dueDate
 //uses recycler view from fragment_home.xml: id is task_list
@@ -33,35 +35,32 @@ data class Task(
 )
 
 class HomeFragment : Fragment() {
-
     private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+    private lateinit var taskList: MutableList<Task>
+    private lateinit var rvTasks: RecyclerView
+    private lateinit var adapter: TaskAdapter // Corrected here
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        rvTasks = root.findViewById(R.id.task_list)
+        taskList = mutableListOf()
+        adapter = TaskAdapter(taskList)
+
+        binding.taskList.adapter = adapter
+        binding.taskList.layoutManager = LinearLayoutManager(requireContext())
+
         val addButton: Button = root.findViewById(R.id.add_button)
-
         addButton.setOnClickListener {
-            // Show a toast message when the button is clicked
             Toast.makeText(requireContext(), "Add button clicked", Toast.LENGTH_SHORT).show()
-
-            // Replace the current view with the new view
-            val intent = Intent(requireContext(), Task::class.java)
-            startActivity(intent)
         }
-        getTasksFromGoogleCalendar()
+        //getTasksFromGoogleCalendar()
 
         val viewPager = root.findViewById<ViewPager>(R.id.viewPager)
         viewPager.adapter = HomeTabAdapter(childFragmentManager)
@@ -79,20 +78,20 @@ class HomeFragment : Fragment() {
             client.get(url, object : JsonHttpResponseHandler() {
                 override fun onSuccess(
                     statusCode: Int,
-                    headers: Array<Header>?,
+                    headers: Header?,
                     response: JSONObject?
                 ) {
                     val title = response?.getString("task title")
-                    val dueDate = response?.getJSONArray("task due date")
+                    val dueDate = response?.getString("task due date")
                     if (title != null && dueDate != null) {
                         val task = Task(
                             title,
-                            dueDate="10/10",  //should be changed from API
+                            dueDate,
                             completed = false,
                             reward = 1
                         )
-                        taskList.add(task) // Add the task object to the list
-                        activity?.runOnUiThread { // update UI
+                        taskList.add(task)
+                        activity?.runOnUiThread {
                             adapter.notifyDataSetChanged()
                         }
                     }
@@ -100,13 +99,13 @@ class HomeFragment : Fragment() {
 
                 override fun onFailure(
                     statusCode: Int,
-                    headers: Array<Header>?,
+                    headers: Header?,
                     throwable: Throwable,
                     errorResponse: JSONObject?
                 ) {
                     Log.d("Task Error", throwable?.message ?: "Unknown error")
                 }
-            })
-        }
-    }
+})
+}
+}
 }
