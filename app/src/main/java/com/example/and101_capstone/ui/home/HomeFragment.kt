@@ -1,13 +1,21 @@
 package com.example.and101_capstone.ui.home
 
 //api stuff
-import com.google.api.client.googleapis.extensions.android.accounts.GoogleAccountCredential
 import com.google.api.services.calendar.Calendar
+import org.joda.time.DateTime
 import com.google.api.services.calendar.model.Events
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.Collections
-
+import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential
+import com.google.api.client.googleapis.extensions.android.gms.auth.GooglePlayServicesAvailabilityIOException
+import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException
+import com.google.api.services.calendar.CalendarScopes
+import com.google.api.services.calendar.model.*
+import java.io.IOException
+import java.util.Arrays
+import com.google.api.client.extensions.android.http.AndroidHttp
+import com.google.api.client.json.jackson2.JacksonFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -33,6 +41,10 @@ import com.example.and101_capstone.ui.task.TaskData
 //PUT TO API using create event through the "Add Tasks" button
 
 class HomeFragment : Fragment() {
+    companion object {
+        private val HTTP_TRANSPORT = AndroidHttp.newCompatibleTransport()
+        private val JSON_FACTORY = JacksonFactory.getDefaultInstance()
+    }
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private lateinit var taskList: MutableList<TaskData>
@@ -78,15 +90,16 @@ class HomeFragment : Fragment() {
                 val credential = GoogleAccountCredential.usingOAuth2(
                     requireContext(), Collections.singleton(CalendarScopes.CALENDAR_READONLY)
                 )
+                credential.selectedAccountName = "your-account-name"
                 // TODO: Set up credential with selected account
 
                 // Set up Calendar service
                 val service = Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
-                    .setApplicationName("Your Application Name")
+                    .setApplicationName("Questify")
                     .build()
 
                 // Fetch events
-                val now = DateTime(System.currentTimeMillis())
+                val now = com.google.api.client.util.DateTime(System.currentTimeMillis())
                 val events: Events = service.events().list("primary")
                     .setMaxResults(10)
                     .setTimeMin(now)

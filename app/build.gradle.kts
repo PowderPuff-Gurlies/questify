@@ -43,6 +43,13 @@ dependencies {
 
 //    implementation ("com.github.bumptech.glide:glide:4.11.0")
 //    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
+    implementation ("joda-time:joda-time:2.10.13")
+    implementation ("com.google.http-client:google-http-client-android:1.39.2")
+    implementation ("com.google.http-client:google-http-client-jackson2:1.39.2")
+    implementation ("com.google.api-client:google-api-client:1.31.5")
+    implementation ("com.google.api-client:google-api-client-android:1.31.5")
+    implementation ("com.google.api-client:google-api-client-gson:1.31.5")
+    implementation ("com.google.apis:google-api-services-calendar:v3-rev305-1.25.0")
     implementation("androidx.credentials:credentials:1.3.0-alpha03")
     implementation("androidx.credentials:credentials-play-services-auth:1.3.0-alpha03")
     implementation ("com.google.api-client:google-api-client:2.0.0")
