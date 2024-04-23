@@ -1,6 +1,8 @@
 package com.example.and101_capstone.ui.home
 
 //api stuff
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Intent
 import com.google.api.services.calendar.Calendar
 import org.joda.time.DateTime
@@ -85,7 +87,21 @@ class HomeFragment : Fragment() {
         val tabLayout = root.findViewById<TabLayout>(R.id.tabs)
         tabLayout.setupWithViewPager(viewPager)
 
+        val timerButton: Button = root.findViewById(R.id.timer_button)
+        timerButton.setOnClickListener {
+            createPopUp()
+        }
         return root
+    }
+
+    private fun createPopUp() {
+        val inflater = LayoutInflater.from(requireContext())
+        val view = inflater.inflate(R.layout.pomodoro_popup, null)
+
+        // Create the dialog with the inflated view
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(view)
+        dialog.show()
     }
 
     private fun fetchEventsFromGoogleCalendar() {
