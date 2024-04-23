@@ -5,20 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="This is Stats Page"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423" />
-
     <ImageView
         android:id="@+id/heartImageView"
         android:layout_width="20dp"
@@ -66,15 +52,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="100dp"
         android:progress="55"
         android:progressDrawable="@drawable/health_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.139" />
 
     <ProgressBar
         android:id="@+id/experienceProgressBar"
@@ -83,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
+        android:layout_marginTop="20dp"
         android:progress="15"
         android:progressDrawable="@drawable/experience_bar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -99,6 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
+        android:layout_marginTop="20dp"
         android:progress="85"
         android:progressDrawable="@drawable/mana_bar"
         app:layout_constraintBottom_toBottomOf="parent"
