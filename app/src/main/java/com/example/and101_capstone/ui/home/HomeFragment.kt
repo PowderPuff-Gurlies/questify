@@ -106,7 +106,7 @@ class HomeFragment : Fragment() {
                 // Fetch events
                 val now = com.google.api.client.util.DateTime(System.currentTimeMillis())
                 val events: Events = service.events().list("bdabeb04a42d706ce2de0a3dcf884b669d2410c63381b0fb6ac71fd4c9d72f1b@group.calendar.google.com")
-                    .setMaxResults(10)
+                    .setMaxResults(15) //grab 15 events?
                     .setTimeMin(now)
                     .setOrderBy("startTime")
                     .setSingleEvents(true)
