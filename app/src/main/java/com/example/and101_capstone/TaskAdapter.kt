@@ -1,14 +1,11 @@
-package com.example.and101_capstone.ui.dashboard
+package com.example.and101_capstone
 
-import com.example.and101_capstone.ui.task.TaskData // Add this line
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.and101_capstone.R
+import com.example.and101_capstone.ui.task.TaskData
 
 class TaskAdapter(private val taskList: List<TaskData>) : RecyclerView.Adapter<TaskAdapter.ViewHolder>()  {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -27,4 +24,17 @@ class TaskAdapter(private val taskList: List<TaskData>) : RecyclerView.Adapter<T
         holder.taskDueDate.text = currentTask.dueDate
     }
     override fun getItemCount() = taskList.size
+
+//    override fun removeTask(){
+//
+//    }
+//    inner class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+//        val textTaskTitle: TextView = view.findViewById(R.id.text_task_title)
+//        val checkboxTask: CheckBox = view.findViewById(R.id.checkbox_task)
+//    }
+//
+//    data class Task(
+//        val title: String,
+//        val completed: Boolean
+//    )
 }

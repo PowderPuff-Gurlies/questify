@@ -28,13 +28,13 @@
         android:paddingEnd="8dp" /> <!-- Added this line -->
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/task_checkBox"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@color/bg_blue"
         android:backgroundTint="@color/category2"
         android:buttonTint="@color/white"
-        android:checked="true"
+        android:checked="false"
         android:textColor="@color/white" />
 
 </LinearLayout>

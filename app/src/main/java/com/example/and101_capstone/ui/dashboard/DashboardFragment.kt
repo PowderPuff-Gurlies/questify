@@ -43,8 +43,8 @@ class DashboardFragment : Fragment() {
             Task("Task 3", false)
         )
 
-        // Create an instance of TaskAdapter and set it to RecyclerView
-        //val adapter = TaskAdapter(tasks)
+        // Create an instance of TaskAdapter.kt and set it to RecyclerView
+        //val adapter = TaskAdapter.kt(tasks)
         //recyclerView.adapter = adapter
 
         return root

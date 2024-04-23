@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/heartImageView"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:background="@mipmap/heart_icon"
         app:layout_constraintBottom_toBottomOf="@+id/healthProgressBar"
         app:layout_constraintEnd_toStartOf="@+id/healthProgressBar"
@@ -21,8 +21,8 @@
 
     <ImageView
         android:id="@+id/experienceImageView"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:background="@mipmap/experience_icon"
         app:layout_constraintBottom_toBottomOf="@+id/experienceProgressBar"
         app:layout_constraintEnd_toStartOf="@+id/experienceProgressBar"
@@ -34,8 +34,8 @@
 
     <ImageView
         android:id="@+id/manaImageView"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="26dp"
+        android:layout_height="27dp"
         android:background="@mipmap/mana_icon"
         app:layout_constraintBottom_toBottomOf="@+id/manaProgressBar"
         app:layout_constraintEnd_toStartOf="@+id/manaProgressBar"
@@ -45,15 +45,13 @@
         app:layout_constraintVertical_bias="0.555"
         android:contentDescription="@string/image_content_default" />
 
-
     <ProgressBar
         android:id="@+id/healthProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="40dp"
         android:progress="55"
         android:progressDrawable="@drawable/health_bar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,39 +61,72 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.139" />
 
+    <TextView
+        android:id="@+id/healthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="55/100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toEndOf="@+id/heartImageView"
+        app:layout_constraintTop_toBottomOf="@+id/healthProgressBar"
+        app:layout_constraintVertical_bias="0.003" />
+
     <ProgressBar
         android:id="@+id/experienceProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="40dp"
         android:progress="15"
         android:progressDrawable="@drawable/experience_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/healthProgressBar"
+        app:layout_constraintTop_toBottomOf="@+id/healthText"
         app:layout_constraintVertical_bias="0.05" />
+
+    <TextView
+        android:id="@+id/experienceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15/100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toEndOf="@+id/experienceImageView"
+        app:layout_constraintTop_toBottomOf="@+id/experienceProgressBar"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ProgressBar
         android:id="@+id/manaProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="40dp"
         android:progress="85"
         android:progressDrawable="@drawable/mana_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/experienceProgressBar"
+        app:layout_constraintTop_toBottomOf="@+id/experienceText"
         app:layout_constraintVertical_bias="0.05" />
 
+    <TextView
+        android:id="@+id/manaText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="85/100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toEndOf="@+id/manaImageView"
+        app:layout_constraintTop_toBottomOf="@+id/manaProgressBar"
+        app:layout_constraintVertical_bias="0.004" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,9 +3,9 @@ package com.example.and101_capstone.ui.home
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.and101_capstone.StatsFragment
-import com.example.and101_capstone.QuestsFragment
 import com.example.and101_capstone.AwardsFragment
+import com.example.and101_capstone.QuestsFragment
+import com.example.and101_capstone.StatsFragment
 
 class HomeTabAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 

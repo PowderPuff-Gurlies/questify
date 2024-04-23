@@ -3,87 +3,46 @@ package com.example.and101_capstone.ui.home
 //api stuff
 import android.app.AlertDialog
 import android.app.Dialog
+//import com.codepath.asynchttpclient.AsyncHttpClient
+//import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import android.content.Intent
-import com.google.api.services.calendar.Calendar
-import org.joda.time.DateTime
-import com.google.api.services.calendar.model.Events
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import java.util.Collections
-import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential
-import com.google.api.client.googleapis.extensions.android.gms.auth.GooglePlayServicesAvailabilityIOException
-import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException
-import com.google.api.services.calendar.CalendarScopes
-import com.google.api.services.calendar.model.*
-import java.io.IOException
-import java.util.Arrays
-import com.google.api.client.extensions.android.http.AndroidHttp
-import com.google.api.client.json.jackson2.JacksonFactory
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
-//import com.codepath.asynchttpclient.AsyncHttpClient
-//import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.and101_capstone.R
 import com.example.and101_capstone.databinding.FragmentHomeBinding
-import com.google.android.material.tabs.TabLayout
-import org.json.JSONObject
-import com.example.and101_capstone.ui.dashboard.TaskAdapter
 import com.example.and101_capstone.ui.task.AddTask
-import com.example.and101_capstone.ui.task.TaskData
+import com.google.android.material.tabs.TabLayout
 
 //uses task_item.xml: has task_title and task_dueDate
 //uses recycler view from fragment_home.xml: id is task_list
 //PUT TO API using create event through the "Add Tasks" button
 
 class HomeFragment : Fragment() {
-    companion object {
-        private val HTTP_TRANSPORT = AndroidHttp.newCompatibleTransport()
-        private val JSON_FACTORY = JacksonFactory.getDefaultInstance()
-    }
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private lateinit var taskList: MutableList<TaskData>
-    private lateinit var rvTasks: RecyclerView
-    private lateinit var adapter: TaskAdapter // Corrected here
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        fetchEventsFromGoogleCalendar()
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        rvTasks = root.findViewById(R.id.task_list)
-        taskList = mutableListOf()
-        adapter = TaskAdapter(taskList)
-
-        binding.taskList.adapter = adapter
-        binding.taskList.layoutManager = LinearLayoutManager(requireContext())
-
+//        binding.taskList.layoutManager = LinearLayoutManager(requireContext())
         val addButton: Button = root.findViewById(R.id.add_button)
         addButton.setOnClickListener {
             Toast.makeText(requireContext(), "Add button clicked", Toast.LENGTH_SHORT).show()
-
             //Add transition to the AddTask class
             val intent = Intent(requireContext(), AddTask::class.java)
             startActivity(intent)
         }
-        //getTasksFromGoogleCalendar()
-
         val viewPager = root.findViewById<ViewPager>(R.id.viewPager)
         viewPager.adapter = HomeTabAdapter(childFragmentManager)
-
         val tabLayout = root.findViewById<TabLayout>(R.id.tabs)
         tabLayout.setupWithViewPager(viewPager)
 
@@ -145,5 +104,8 @@ class HomeFragment : Fragment() {
                 Log.e("Task Error", e.message ?: "Unknown error")
             }
         }.start()
+    }
+}
+        return root
     }
 }

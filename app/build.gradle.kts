@@ -1,4 +1,5 @@
 plugins {
+//    id("kotlin-kapt") // Apply Kotlin Kapt plugin
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 }
@@ -42,10 +43,6 @@ android {
 }
 
 dependencies {
-
-
-//    implementation ("com.github.bumptech.glide:glide:4.11.0")
-//    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
     implementation ("joda-time:joda-time:2.10.13")
     implementation ("com.google.http-client:google-http-client-android:1.39.2")
     implementation ("com.google.http-client:google-http-client-jackson2:1.39.2")
@@ -73,6 +70,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+//    implementation(libs.androidx.databinding.runtime)
+    implementation(libs.androidx.library)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
