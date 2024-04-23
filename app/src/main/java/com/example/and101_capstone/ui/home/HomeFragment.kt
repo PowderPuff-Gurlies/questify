@@ -96,7 +96,6 @@ class HomeFragment : Fragment() {
                 val credential = GoogleAccountCredential.usingOAuth2(
                     requireContext(), Collections.singleton(CalendarScopes.CALENDAR_READONLY)
                 )
-                credential.selectedAccountName = "your-account-name"
                 // TODO: Set up credential with selected account
 
                 // Set up Calendar service
@@ -106,7 +105,7 @@ class HomeFragment : Fragment() {
 
                 // Fetch events
                 val now = com.google.api.client.util.DateTime(System.currentTimeMillis())
-                val events: Events = service.events().list("primary")
+                val events: Events = service.events().list("bdabeb04a42d706ce2de0a3dcf884b669d2410c63381b0fb6ac71fd4c9d72f1b@group.calendar.google.com")
                     .setMaxResults(10)
                     .setTimeMin(now)
                     .setOrderBy("startTime")
