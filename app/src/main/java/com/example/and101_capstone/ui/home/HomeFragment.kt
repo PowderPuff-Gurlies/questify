@@ -1,6 +1,7 @@
 package com.example.and101_capstone.ui.home
 
 //api stuff
+import android.content.Intent
 import com.google.api.services.calendar.Calendar
 import org.joda.time.DateTime
 import com.google.api.services.calendar.model.Events
@@ -34,6 +35,7 @@ import com.example.and101_capstone.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayout
 import org.json.JSONObject
 import com.example.and101_capstone.ui.dashboard.TaskAdapter
+import com.example.and101_capstone.ui.task.AddTask
 import com.example.and101_capstone.ui.task.TaskData
 
 //uses task_item.xml: has task_title and task_dueDate
@@ -70,6 +72,10 @@ class HomeFragment : Fragment() {
         val addButton: Button = root.findViewById(R.id.add_button)
         addButton.setOnClickListener {
             Toast.makeText(requireContext(), "Add button clicked", Toast.LENGTH_SHORT).show()
+
+            //Add transition to the AddTask class
+            val intent = Intent(requireContext(), AddTask::class.java)
+            startActivity(intent)
         }
         //getTasksFromGoogleCalendar()
 
