@@ -1,5 +1,13 @@
 package com.example.and101_capstone.ui.home
 
+//api stuff
+import com.google.api.client.googleapis.extensions.android.accounts.GoogleAccountCredential
+import com.google.api.services.calendar.Calendar
+import com.google.api.services.calendar.model.Events
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import java.util.Collections
+
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,8 +19,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
-import com.codepath.asynchttpclient.AsyncHttpClient
-import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
+//import com.codepath.asynchttpclient.AsyncHttpClient
+//import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.and101_capstone.R
 import com.example.and101_capstone.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayout
@@ -36,6 +44,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        fetchEventsFromGoogleCalendar()
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -61,45 +70,46 @@ class HomeFragment : Fragment() {
         return root
     }
 
-    private fun getTasksFromGoogleCalendar() {
-        val client = AsyncHttpClient()
-        val url = "google id for API call here"
-        client.get(url, object : JsonHttpResponseHandler() {
-            override fun onSuccess(
-                statusCode: Int,
-                headers: Headers?,
-                response: JSONObject?
-            ) {
-                val events = response?.getJSONArray("events") // Replace "events" with the actual key
-                for (i in 0 until events?.length()) {
-                    val event = events?.getJSONObject(i)
-                    val title = event?.getString("summary") // Replace "summary" with the actual key
-                    val dueDate = event?.getString("start") // Replace "start" with the actual key
-                    if (title != null && dueDate != null) {
+    private fun fetchEventsFromGoogleCalendar() {
+        // Create a new thread to fetch events
+        Thread {
+            try {
+                // Set up Google Account Credential
+                val credential = GoogleAccountCredential.usingOAuth2(
+                    requireContext(), Collections.singleton(CalendarScopes.CALENDAR_READONLY)
+                )
+                // TODO: Set up credential with selected account
+
+                // Set up Calendar service
+                val service = Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
+                    .setApplicationName("Your Application Name")
+                    .build()
+
+                // Fetch events
+                val now = DateTime(System.currentTimeMillis())
+                val events: Events = service.events().list("primary")
+                    .setMaxResults(10)
+                    .setTimeMin(now)
+                    .setOrderBy("startTime")
+                    .setSingleEvents(true)
+                    .execute()
+
+                // Update UI on the main thread
+                requireActivity().runOnUiThread {
+                    for (event in events.items) {
                         val task = TaskData(
-                            title,
-                            dueDate,
+                            event.summary,
+                            event.start.dateTime.toStringRfc3339(),
                             completed = false,
                             reward = 1
                         )
                         taskList.add(task)
-                        activity?.runOnUiThread {
-                            adapter.notifyDataSetChanged()
-                        }
                     }
+                    adapter.notifyDataSetChanged()
                 }
+            } catch (e: Exception) {
+                Log.e("Task Error", e.message ?: "Unknown error")
             }
-
-            override fun onFailure(
-                statusCode: Int,
-                headers: Headers?,
-                throwable: Throwable,
-                errorResponse: JSONObject?
-            ) {
-                Log.d("Task Error", throwable?.message ?: "Unknown error")
-            }
-        })
-
-})
-}
+        }.start()
+    }
 }
