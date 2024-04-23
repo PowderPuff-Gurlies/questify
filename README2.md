@@ -47,9 +47,11 @@ The following EXTRA features are implemented:
 
 Here's a video that demos all of the app's implemented features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Demo' width='' alt='Video Demo' />
+[![Video Demo](https://img.youtube.com/vi/pM6Qb7tYvU4/0.jpg)](https://www.youtube.com/watch?v=pM6Qb7tYvU4)
 
-VIDEO created with **your chosen video tool**
+<!-- <video src='https://youtu.be/pM6Qb7tYvU4' title='Video Demo' width='50%' alt='Video Demo' /> -->
+
+VIDEO created with Zoom and iMovie.
 
 ## Notes
 
