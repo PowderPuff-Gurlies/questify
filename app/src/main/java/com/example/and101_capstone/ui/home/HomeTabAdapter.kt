@@ -1,3 +1,5 @@
+package com.example.and101_capstone.ui.home
+
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter

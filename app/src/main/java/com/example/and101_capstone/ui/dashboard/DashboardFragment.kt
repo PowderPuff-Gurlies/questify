@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.and101_capstone.databinding.FragmentDashboardBinding
+import com.example.and101_capstone.ui.task.TaskData
 
 // In your activity or fragment
 //this file recieves the done tasks and places them in the doneTasks list
@@ -32,8 +33,8 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val recyclerView: RecyclerView = binding.recyclerViewTasks
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        //val recyclerView: RecyclerView = binding.recyclerViewTasks
+        //recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         // Sample list of tasks (Replace with your actual data source)
         val tasks: List<Task> = listOf(
@@ -43,8 +44,8 @@ class DashboardFragment : Fragment() {
         )
 
         // Create an instance of TaskAdapter and set it to RecyclerView
-        val adapter = TaskAdapter(tasks)
-        recyclerView.adapter = adapter
+        //val adapter = TaskAdapter(tasks)
+        //recyclerView.adapter = adapter
 
         return root
     }

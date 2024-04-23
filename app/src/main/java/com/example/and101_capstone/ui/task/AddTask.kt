@@ -17,7 +17,7 @@ data class TaskData (
     val reward: Int = 1     //this is the reward for completing the task, constant 1
 )
 
-class Task : AppCompatActivity() {
+class AddTask : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // Hides the top bar
         requestWindowFeature(Window.FEATURE_NO_TITLE)

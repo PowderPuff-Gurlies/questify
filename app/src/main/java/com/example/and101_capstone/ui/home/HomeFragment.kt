@@ -1,7 +1,5 @@
 package com.example.and101_capstone.ui.home
 
-import HomeTabAdapter
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
@@ -18,10 +15,10 @@ import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.and101_capstone.R
 import com.example.and101_capstone.databinding.FragmentHomeBinding
-import com.example.and101_capstone.ui.task.Task
 import com.google.android.material.tabs.TabLayout
 import org.json.JSONObject
 import com.example.and101_capstone.ui.dashboard.TaskAdapter
+import com.example.and101_capstone.ui.task.TaskData
 
 //uses task_item.xml: has task_title and task_dueDate
 //uses recycler view from fragment_home.xml: id is task_list
@@ -30,7 +27,7 @@ import com.example.and101_capstone.ui.dashboard.TaskAdapter
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private lateinit var taskList: MutableList<Task>
+    private lateinit var taskList: MutableList<TaskData>
     private lateinit var rvTasks: RecyclerView
     private lateinit var adapter: TaskAdapter // Corrected here
 
@@ -79,7 +76,7 @@ class HomeFragment : Fragment() {
                     val title = event?.getString("summary") // Replace "summary" with the actual key
                     val dueDate = event?.getString("start") // Replace "start" with the actual key
                     if (title != null && dueDate != null) {
-                        val task = Task(
+                        val task = TaskData(
                             title,
                             dueDate,
                             completed = false,

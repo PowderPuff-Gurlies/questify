@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.task.Task"
+            android:name=".ui.task.AddTask"
             android:label="TaskFragment">
         </activity>
         <activity

@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.and101_capstone.databinding.FragmentNotificationsBinding
-import com.example.and101_capstone.ui.CalendarQuickstart
 
 class NotificationsFragment : Fragment() {
 
@@ -33,8 +32,6 @@ class NotificationsFragment : Fragment() {
         notificationsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
-        CalendarQuickstart.main(requireContext())
-
         return root
     }
 
