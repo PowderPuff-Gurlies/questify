@@ -9,7 +9,7 @@
 
 ## App Overview
 
-### Description 
+### Description
 
 **Mobile app that gamifies task management by allowing users to schedule tasks, earn points, and level up their virtual avatars.**
 
@@ -20,13 +20,13 @@
 - **Category:** Productivity, Gamification
 - **Mobile:** Users interact with their avatars, earning rewards and customizing features. Push notifications keep users engaged and on track.
 - **Story:** Tasks become adventures as users strive to level up their avatars and unlock rewards, creating a compelling narrative of progress.
-- **Market:** The app caters to a broad user base interested in enhancing productivity through gamified elements, primarily young adults. 
+- **Market:** The app caters to a broad user base interested in enhancing productivity through gamified elements, primarily young adults.
 - **Habit:** Users integrate the app into their daily routine, constantly striving to complete tasks and earn rewards. The app encourages frequent engagement as users progress through levels and unlock new features.
-- **Scope:** 
-    - **V1**: Users schedule tasks and earn points with their virtual avatars. 
-    - **V2**: Introduces advanced gamification elements, such as challenges and leaderboards. 
-    - **V3**: (Optional) Enhances social features, allowing users to compete and collaborate with friends.
-    - **V4**: (Optional) Expands platform compatibility and introduces premium customization options.
+- **Scope:**
+  - **V1**: Users schedule tasks and earn points with their virtual avatars.
+  - **V2**: Introduces advanced gamification elements, such as challenges and leaderboards.
+  - **V3**: (Optional) Enhances social features, allowing users to compete and collaborate with friends.
+  - **V4**: (Optional) Expands platform compatibility and introduces premium customization options.
 
 ## Product Spec
 
@@ -43,25 +43,26 @@ Required Features:
 
 Stretch Features:
 
-- **Leaderboards**
-- **Achievements**
-- **Firebase for Storing User Info**
+- [] **Leaderboards**
+- [] **Achievements**
+- [] **Firebase for Storing User Info**
+- [] **Google Authentication**
+- [] **Tasks get added to the calendar**
 
 ### 2. Chosen API(s)
 
 - **Task Management API**
-  - **Using Google Calendar API**
-  - **Connect to internet**
+  - [x] **Using Google Calendar API**
+  - [x] **Connect to internet**
 
 ### 3. User Interaction
 
 Required Feature
 
-- **Button to add tasks**
-  - => **Task is added to the schedule**
-- **Button to complete tasks**
-  - => **User earns points and levels up avatar**
-- **RecyclerView to see past tasks and/or achievements**
+- [x] **Button to add tasks**
+- [x] **Button to complete tasks**
+  - => [X] **User earns points and levels up avatar**
+- [x] **RecyclerView to see past tasks and/or achievements**
 
 ## Wireframes
 
@@ -70,10 +71,18 @@ Required Feature
 
 ## Build Notes
 
-Here's a place for any other notes on the app, it's creation 
-process, or what you learned this unit!  
+Here's a place for any other notes on the app, it's creation
+process, or what you learned this unit!
 
 For Milestone 2, include **2+ Videos/GIFs** of the build process here!
+
+<img src='Capstone_2.gif' title='WIP: Base Avatar' width='30%' alt='Video Demo' />
+
+<img src='Capstone_3.gif' title='WIP: Base Frontend' width='30%' alt='Video Demo' />
+
+<img src='Capstone_1.gif' title='WIP: More Frontend + some functionality' width='30%' alt='Video Demo' />
+
+<img src='Capstone_4.gif' title='Finished: Recycler View + API Call' width='30%' alt='Video Demo' />
 
 ## License
 
