@@ -34,12 +34,12 @@
 
 Required Features:
 
-- **Using Google Calendar API**
-- **At least 3 Screens**
-- **Themes**
-- **Connect to Internet**
-- **Button and text interactions**
-- **RecyclerView**
+- [X]**Using Google Calendar API**
+- [x] **At least 3 Screens**
+- [] **Themes**
+- [x] **Connect to Internet**
+- [x] **Button and text interactions**
+- [x] **RecyclerView**
 
 Stretch Features:
 
@@ -74,15 +74,13 @@ Required Feature
 Here's a place for any other notes on the app, it's creation
 process, or what you learned this unit!
 
-For Milestone 2, include **2+ Videos/GIFs** of the build process here!
+For Milestone 2, include 3 gifs of the build process here!
 
 <img src='Capstone_2.gif' title='WIP: Base Avatar' width='30%' alt='Video Demo' />
 
 <img src='Capstone_3.gif' title='WIP: Base Frontend' width='30%' alt='Video Demo' />
 
 <img src='Capstone_1.gif' title='WIP: More Frontend + some functionality' width='30%' alt='Video Demo' />
-
-<img src='Capstone_4.gif' title='Finished: Recycler View + API Call' width='30%' alt='Video Demo' />
 
 ## License
 
