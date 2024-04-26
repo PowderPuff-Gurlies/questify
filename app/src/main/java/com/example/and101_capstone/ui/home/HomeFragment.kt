@@ -1,16 +1,14 @@
 package com.example.and101_capstone.ui.home
 
 //api stuff
-import android.app.AlertDialog
 import android.app.Dialog
-//import com.codepath.asynchttpclient.AsyncHttpClient
-//import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -41,6 +39,12 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), AddTask::class.java)
             startActivity(intent)
         }
+
+        val setting = root.findViewById<ImageView>(R.id.setting)
+        setting.setOnClickListener {
+            Toast.makeText(requireContext(), "Settings WIP", Toast.LENGTH_SHORT).show()
+        }
+
         val viewPager = root.findViewById<ViewPager>(R.id.viewPager)
         viewPager.adapter = HomeTabAdapter(childFragmentManager)
         val tabLayout = root.findViewById<TabLayout>(R.id.tabs)
@@ -63,49 +67,49 @@ class HomeFragment : Fragment() {
         dialog.show()
     }
 
-    private fun fetchEventsFromGoogleCalendar() {
-        // Create a new thread to fetch events
-        Thread {
-            try {
-                // Set up Google Account Credential
-                val credential = GoogleAccountCredential.usingOAuth2(
-                    requireContext(), Collections.singleton(CalendarScopes.CALENDAR_READONLY)
-                )
-                // TODO: Set up credential with selected account
-
-                // Set up Calendar service
-                val service = Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
-                    .setApplicationName("Questify")
-                    .build()
-
-                // Fetch events
-                val now = com.google.api.client.util.DateTime(System.currentTimeMillis())
-                val events: Events = service.events().list("bdabeb04a42d706ce2de0a3dcf884b669d2410c63381b0fb6ac71fd4c9d72f1b@group.calendar.google.com")
-                    .setMaxResults(15) //grab 15 events?
-                    .setTimeMin(now)
-                    .setOrderBy("startTime")
-                    .setSingleEvents(true)
-                    .execute()
-
-                // Update UI on the main thread
-                requireActivity().runOnUiThread {
-                    for (event in events.items) {
-                        val task = TaskData(
-                            event.summary,
-                            event.start.dateTime.toStringRfc3339(),
-                            completed = false,
-                            reward = 1
-                        )
-                        taskList.add(task)
-                    }
-                    adapter.notifyDataSetChanged()
-                }
-            } catch (e: Exception) {
-                Log.e("Task Error", e.message ?: "Unknown error")
-            }
-        }.start()
+//    private fun fetchEventsFromGoogleCalendar() {
+//        // Create a new thread to fetch events
+//        Thread {
+//            try {
+//                // Set up Google Account Credential
+//                val credential = GoogleAccountCredential.usingOAuth2(
+//                    requireContext(), Collections.singleton(CalendarScopes.CALENDAR_READONLY)
+//                )
+//                // TODO: Set up credential with selected account
+//
+//                // Set up Calendar service
+//                val service = Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
+//                    .setApplicationName("Questify")
+//                    .build()
+//
+//                // Fetch events
+//                val now = com.google.api.client.util.DateTime(System.currentTimeMillis())
+//                val events: Events = service.events().list("bdabeb04a42d706ce2de0a3dcf884b669d2410c63381b0fb6ac71fd4c9d72f1b@group.calendar.google.com")
+//                    .setMaxResults(15) //grab 15 events?
+//                    .setTimeMin(now)
+//                    .setOrderBy("startTime")
+//                    .setSingleEvents(true)
+//                    .execute()
+//
+//                // Update UI on the main thread
+//                requireActivity().runOnUiThread {
+//                    for (event in events.items) {
+//                        val task = TaskData(
+//                            event.summary,
+//                            event.start.dateTime.toStringRfc3339(),
+//                            completed = false,
+//                            reward = 1
+//                        )
+//                        taskList.add(task)
+//                    }
+//                    adapter.notifyDataSetChanged()
+//                }
+//            } catch (e: Exception) {
+//                Log.e("Task Error", e.message ?: "Unknown error")
+//            }
+//        }.start()
+//    }
+//}
+//        return root
     }
-}
-        return root
-    }
-}
+
