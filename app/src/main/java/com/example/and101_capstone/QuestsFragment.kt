@@ -2,16 +2,23 @@ package com.example.and101_capstone
 
 //import com.codepath.asynchttpclient.AsyncHttpClient
 //import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
+import android.icu.text.DateFormat
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.codepath.asynchttpclient.AsyncHttpClient
+import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.and101_capstone.databinding.FragmentQuestsBinding
 import com.example.and101_capstone.ui.task.TaskData
 import com.google.api.client.extensions.android.http.AndroidHttp.newCompatibleTransport
 import com.google.api.client.json.jackson2.JacksonFactory.getDefaultInstance
+import okhttp3.Headers
+import java.text.SimpleDateFormat
+import java.util.Date
 
 class QuestsFragment : Fragment() {
 
@@ -37,23 +44,11 @@ class QuestsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//         Create 5 dummy tasks
-        val task1 = TaskData("Study for Algorithms Exam", "1PM", false)
-        val task2 = TaskData("Study for Math Final", "3PM", false)
-        val task3 = TaskData("Buy Groceries", "10AM", false)
-        val task4 = TaskData("Prepare for Presentation", "2PM", false)
-        val task5 = TaskData("Go for a Run", "6AM", false)
-        val task6 = TaskData("Read Chapter 5 of Novel", "7PM", false)
-        val task7 = TaskData("Attend Yoga Class", "9AM", false)
-        val task8 = TaskData("Write Article for Blog", "12PM", false)
-        // Add the tasks to the list
-        taskList = mutableListOf(task1, task2, task3, task4, task5, task6, task7, task8)
-
+        taskList = mutableListOf()
+        fetch2()
         adapter = TaskAdapter(taskList)
         binding.taskList.adapter = adapter
         binding.taskList.layoutManager = LinearLayoutManager(requireContext())
-
-        // You can uncomment and call fetchEventsFromGoogleCalendar() here if needed
     }
 
 //    private fun findAllCheckBoxes(view: View): List<CheckBox> {
@@ -71,46 +66,42 @@ class QuestsFragment : Fragment() {
 //        return checkBoxes
 //    }
 
-//    private fun fetch2() {
-//        val client = AsyncHttpClient()
-//        client.get("https://www.googleapis.com/calendar/v3/calendars/bdabeb04a42d706ce2de0a3dcf884b669d2410c63381b0fb6ac71fd4c9d72f1b@group.calendar.google.com/events?key=YOUR_API_KEY", object : JsonHttpResponseHandler() {
-//            override fun onSuccess(p0: Int, p1: Array<Header>?, p2: JSONObject?) {
-//                super.onSuccess(p0, p1, p2)
-//
-//                val events = p2?.getJSONArray("items")
-//                taskList.clear() // Clear the task list before adding new items
-//                for (i in 0 until events?.length() ?: 0) {
-//                    val event = events?.getJSONObject(i)
-//                    val organizer = event?.getJSONObject("organizer")
-//                    val end = event?.getJSONObject("end")
-//                    val task = TaskData(
-//                        organizer?.getString("displayName") ?: "",
-//                        end?.getString("dateTime") ?: "",
-//                        completed = false,
-//                        reward = 1
-//                    )
-//                    taskList.add(task)
-//                }
-//                // Set up the RecyclerView and adapter after fetching tasks
-//                setUpRecyclerView()
-//            }
-//
-//            override fun onFailure(
-//                statusCode: Int,
-//                p1: Array<Header>?,
-//                errorResponse: String?,
-//                throwable: Throwable?
-//            ) {
-//                super.onFailure(statusCode, p1, errorResponse, throwable)
-//                Log.e("Task Error", errorResponse ?: "Unknown error")
-//            }
-//
-//            override fun onSuccess(statusCode: Int, p1: Array<Header>, p2: ByteArray?) {
-//                super.onSuccess(statusCode, p1, p2)
-//                // This method is not implemented because we're only interested in onSuccess with JSON response
-//            }
-//        })
-//    }
+    private fun fetch2() {
+        val key = "AIzaSyBgWnJE3F6sQxCUgnqBY5vzuD1uKUyh6BE"
+        val client = AsyncHttpClient()
+        client.get("https://www.googleapis.com/calendar/v3/calendars/bdabeb04a42d706ce2de0a3dcf884b669d2410c63381b0fb6ac71fd4c9d72f1b@group.calendar.google.com/events?key=$key", object : JsonHttpResponseHandler() {
+            override fun onSuccess(statusCode: Int, headers: Headers, json: JsonHttpResponseHandler.JSON) {
+                val events = json.jsonObject.getJSONArray("items")
+                taskList.clear() // Clear the task list before adding new items
+                for (i in 0 until events.length()) {
+                    val event = events.getJSONObject(i)
+                    val title = event.getString("summary")
+                    val end = event.getJSONObject("end").getString("dateTime")
+
+                    val originalForm: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+                    val targetForm: SimpleDateFormat = SimpleDateFormat("MM/dd @ hh:mm aa")
+                    val date: Date = originalForm.parse(end)
+                    val formattedDate: String = targetForm.format(date)
+
+                    val task = TaskData(
+                        title ?: "",
+                        formattedDate ?: "",
+                        completed = false,
+                        reward = 1
+                    )
+                    Log.d("task $i", "$task")
+                    taskList.add(task)
+                }
+                setUpRecyclerView()
+            }
+            override fun onFailure(statusCode: Int,
+                                   headers: Headers?,
+                                   errorResponse: String,
+                                   throwable: Throwable?) {
+                Log.e("Task Error", errorResponse ?: "Unknown error")
+            }
+        })
+    }
 
 
 
